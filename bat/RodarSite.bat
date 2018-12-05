@@ -1,5 +1,5 @@
 ECHO OFF
 CLS
-cd C:\Users\Andrew\Google Drive\Programacao\Angular 6\Innovativo
+cd C:\Andrew\Projetos\Angular\Innovativo_Angular
 ng serve --open 
 ECHO ON
