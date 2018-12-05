@@ -1,0 +1,108 @@
+<h1 class="text-center">{{ titulo }}</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  <div class="form-group">
+      <label for="cliente">Cliente</label>
+      <select id="cliente" formControlName="cliente" class="form-control" required>
+          <option [value]="c.id" *ngFor="let c of clientes">{{c.nomeFantasia}}</option>
+      </select>        
+  </div>  
+  <div class="form-group">
+      <label for="descricao">Descrição do Relatório</label>
+      <input id="descricao" formControlName="descricao" type="text" class="form-control"  required>
+  </div>
+  <div class="form-group">
+      <label>Período</label>
+      <input formControlName="dataInicial" type="date" class="form-control"  required>
+      à
+      <input formControlName="dataFinal" type="date" class="form-control"  required>      
+  </div>  
+  <table class="table table-striped table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th></th>
+        <th>Direto</th> 
+        <th>Busca Paga</th>
+        <th>Orgânico</th>
+        <th>E-mail</th>
+        <th>Referência</th>    
+      </tr>  
+    </thead>      
+    <tbody>
+      <tr>
+        <td>Visitantes</td>
+        <td>
+          <input type="text" formControlName="diretoVisitantes" class="form-control" required/>
+        </td> 
+        <td>
+          <input type="text" formControlName="buscaPagaVisitantes" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="organicoVisitantes" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="emailVisitantes" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="referenciaVisitantes" class="form-control" required>
+        </td>    
+      </tr>
+      <tr>
+        <td>Leads</td>
+        <td>
+          <input type="text" formControlName="diretoLeads" class="form-control" required/>
+        </td> 
+        <td>
+          <input type="text" formControlName="buscaPagaLeads" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="organicoLeads" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="emailLeads" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="referenciaLeads" class="form-control" required>
+        </td>    
+      </tr>
+      <tr>
+        <td>Oportunidades</td>
+        <td>
+          <input type="text" formControlName="diretoOportunidades" class="form-control" required/>
+        </td> 
+        <td>
+          <input type="text" formControlName="buscaPagaOportunidades" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="organicoOportunidades" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="emailOportunidades" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="referenciaOportunidades" class="form-control" required>
+        </td>    
+      </tr>
+      <tr>
+        <td>Vendas</td>
+        <td>
+          <input type="text" formControlName="diretoVendas" class="form-control" required/>
+        </td> 
+        <td>
+          <input type="text" formControlName="buscaPagaVendas" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="organicoVendas" class="form-control" required>
+        </td>
+        <td>
+          <input type="text" formControlName="emailVendas" class="form-control" required>
+       </td>
+        <td>
+          <input type="text" formControlName="referenciaVendas" class="form-control" required>
+        </td>    
+      </tr>                  
+    </tbody>      
+  </table>
+  <div class="col-md-11 text-center"> 
+    <button type="submit" class="btn btn-primary float-center" [disabled]="!form.valid">Salvar</button>
+  </div> 
+</form>

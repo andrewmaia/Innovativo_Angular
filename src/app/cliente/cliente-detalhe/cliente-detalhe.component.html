@@ -1,0 +1,14 @@
+<h2>Cliente</h2>
+<div *ngIf="cliente$ | async as cliente">
+  <div>
+    <label>Id:</label>{{ cliente.id }}
+  </div>
+  <div>
+    <label>Nome Fantasia:</label>
+    <input [(ngModel)]="cliente.nomeFantasia" placeholder="Nome Fantasia"/>
+  </div>
+  <p>
+    <button (click)="gotoClientes(cliente)">Voltar</button>
+    <button (click)="salvar(cliente)">Salvar</button>    
+  </p>
+</div>

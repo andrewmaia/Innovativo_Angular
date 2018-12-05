@@ -1,0 +1,29 @@
+#wrapperPrincipal{
+    padding: 30px;
+}
+
+#cabecalho{
+    /* background-color: blueviolet; */
+    width:100%;
+    text-align: center;
+}
+
+#menu{
+    /* background-color: green; */
+    width:15%;
+    float: left;
+}
+
+#conteudo{
+    /* background-color: yellow; */
+    float: left;
+    width:85%;
+}
+
+/* #mensagem{
+    background-color:red;
+} */
+
+.menuLink{
+    display: block;
+}

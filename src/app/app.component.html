@@ -1,0 +1,17 @@
+<div id="wrapperPrincipal">
+    <div id="cabecalho"></div>
+    <div id="menu">
+        <nav>
+            <a class = "menuLink" routerLink="/admin" routerLinkActive="active">Admin</a>  
+            <a class = "menuLink" routerLink="/clientes" routerLinkActive="active">Clientes</a>              
+            <a class = "menuLink" routerLink="/eficacia-canais/relatorio" routerLinkActive="active">Eficácia dos Canais</a>
+            <a class = "menuLink"routerLink="/login" routerLinkActive="active">Login</a>  
+        </nav>
+    </div>
+    <div id="conteudo">
+        <router-outlet></router-outlet>
+    </div>
+    <div id="mensagem">
+        <app-messages></app-messages>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<h1 class="text-center">Eficácia dos Canais de Aquisição</h1>
+<div *ngIf="ec$ | async as ec">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-light" >
+      <tr>
+        <th></th>
+        <th>Direto</th> 
+        <th>Busca Paga</th>
+        <th>Orgânico</th>
+        <th>E-mail</th>
+        <th>Referência</th>    
+      </tr>  
+    </thead>      
+    <tbody>
+      <tr>
+        <td>Visitantes</td>
+        <td>{{ ec.diretoVisitantes }}</td> 
+        <td>{{ ec.buscaPagaVisitantes }}</td>
+        <td>{{ ec.organicoVisitantes }}</td>
+        <td>{{ ec.emailVisitantes }}</td>
+        <td>{{ ec.referenciaVisitantes }}</td>      
+      </tr>
+      <tr>
+        <td>Leads</td>
+        <td>{{ ec.diretoLeads }}</td> 
+        <td>{{ ec.buscaPagaLeads }}</td>
+        <td>{{ ec.organicoLeads }}</td>
+        <td>{{ ec.emailLeads }}</td>
+        <td>{{ ec.referenciaLeads }}</td> 
+      </tr>
+      <tr>
+        <td>Oportunidades</td>
+        <td>{{ ec.diretoOportunidades }}</td> 
+        <td>{{ ec.buscaPagaOportunidades }}</td>
+        <td>{{ ec.organicoOportunidades }}</td>
+        <td>{{ ec.emailOportunidades }}</td>
+        <td>{{ ec.referenciaOportunidades }}</td>
+      </tr>    
+      <tr>
+        <td>Vendas</td>
+        <td>{{ ec.diretoVendas }}</td> 
+        <td>{{ ec.buscaPagaVendas }}</td>
+        <td>{{ ec.organicoVendas }}</td>
+        <td>{{ ec.emailVendas }}</td>
+        <td>{{ ec.referenciaVendas }}</td>
+      </tr>
+    </tbody>      
+  </table>
+</div>

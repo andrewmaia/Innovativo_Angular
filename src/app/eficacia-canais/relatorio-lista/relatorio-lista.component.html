@@ -1,0 +1,23 @@
+<h2>Relatórios Disponíveis</h2>
+<a [routerLink]="['/eficacia-canais/novo']">Criar Relatório</a>
+<!--<div *ngIf="ec$ | async as ec"></div>-->
+  <table class="table table-striped table-bordered">
+    <thead class="thead-light" >
+      <tr>
+        <th>Cliente</th>
+        <th>Descrição</th> 
+        <th colspan="2">Período</th>
+        <th></th>    
+      </tr>  
+    </thead>      
+    <tbody>
+      <tr *ngFor="let eficaciaCanalRelatorio of eficaciaCanalRelatorioLista$ | async">
+        <td>{{ eficaciaCanalRelatorio.clienteNomeFantasia }}</td>
+        <td>{{ eficaciaCanalRelatorio.descricao }}</td> 
+        <td>{{ eficaciaCanalRelatorio.dataInicial | date:  'dd/MM/yyyy' }}</td>
+        <td>{{ eficaciaCanalRelatorio.dataFinal | date:  'dd/MM/yyyy' }}</td>
+        <td><a [routerLink]="['/eficacia-canais/relatorio', eficaciaCanalRelatorio.id]">Ver Relatório</a>          </td>
+      </tr>
+    </tbody>      
+  </table>
+<!--</div>-->
