@@ -1,0 +1,10 @@
+<div *ngIf="authService.isLoggedIn()">
+    <span>
+        {{authService.usuario()}}
+    </span>
+    <button (click)="logout()">Sair</button> 
+</div>
+<div *ngIf="!authService.isLoggedIn()">
+    <a routerLink="/login">Entrar</a>  
+</div>
+

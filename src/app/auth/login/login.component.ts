@@ -20,16 +20,16 @@ export class LoginComponent {
   }
 
   setMessage() {
-    this.message = (this.authService.isLoggedIn ? this.authService.usuario + ' logado' : '');
+    this.message = (this.authService.isLoggedIn() ? this.authService.usuario() + ' logado' : '');
   }
 
   onSubmit() {
-    this.message = 'Trying to log in ...';
+    this.message = 'Logando ...';
 
 
     this.authService.login(this.form.get('usuario').value,this.form.get('senha').value).subscribe(() => {
       this.setMessage();
-      if (this.authService.isLoggedIn) {
+      if (this.authService.isLoggedIn()) {
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
         this.router.navigate([redirect]);
       }

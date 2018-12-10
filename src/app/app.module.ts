@@ -9,6 +9,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule }              from './auth/auth.module';
+import { LoginInfoComponent }         from './auth/login-info/login-info.component';
 import { EficaciaCanaisModule }              from './eficacia-canais/eficacia-canais.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { JwtInterceptor } from './jwt.interceptor';
@@ -19,7 +20,9 @@ import { JwtInterceptor } from './jwt.interceptor';
   declarations: [
     AppComponent,
     MessagesComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    LoginInfoComponent
+
   ],
   imports: [
     BrowserModule,
