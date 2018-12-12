@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Cliente } from './cliente';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import * as global from '../global';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ClienteService {
-  private apiUrl = 'https://localhost:5001/api/cliente/';
+  private apiUrl = global.enderecoAPI + 'cliente/';  
   constructor(private messageService: MessageService, private http: HttpClient) { }
 
   obterClientes(): Observable<Cliente[]> {

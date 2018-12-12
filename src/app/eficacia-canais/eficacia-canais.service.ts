@@ -5,6 +5,8 @@ import { EficaciaCanalRelatorio } from './eficacia-canal-relatorio';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import {MessageService} from '../message.service';
+import * as global from '../global';
+
 
 
 const httpOptions = {
@@ -16,7 +18,7 @@ const httpOptions = {
 })
 
 export class EficaciaCanaisService {
-  private apiUrl = 'https://localhost:5001/api/EficaciaCanal/';
+  private apiUrl = global.enderecoAPI + 'EficaciaCanais/';
 
   constructor(private messageService:MessageService, private http: HttpClient) { 
   }

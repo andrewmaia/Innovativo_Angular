@@ -3,12 +3,13 @@ import { Observable, of } from 'rxjs';
 import { catchError, delay, tap,map } from 'rxjs/operators';
 import {MessageService} from '../message.service';
 import { HttpClient} from '@angular/common/http';
+import * as global from '../global';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:5001/api/usuario/autenticar';  
+  private apiUrl = global.enderecoAPI + 'usuario/autenticar';    
   redirectUrl: string;
 
   constructor(private messageService:MessageService, private http: HttpClient) { 

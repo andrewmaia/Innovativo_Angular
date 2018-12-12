@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import * as global from './global';
 
 @Injectable({
   providedIn: 'root',
@@ -21,5 +22,9 @@ export class MessageService {
 
   clear() {
     this.messages = [];
+  }
+
+  podeExibirMensagens(): boolean{
+    return global.podeExibirMensagens;
   }
 }
