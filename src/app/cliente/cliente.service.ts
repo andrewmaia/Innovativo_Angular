@@ -40,10 +40,10 @@ export class ClienteService {
     );
   }  
 
-  inserirCliente (cliente: Cliente): Observable<any> {
-    return this.http.post(this.apiUrl,cliente, httpOptions).pipe(
+  inserirCliente (cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(this.apiUrl,cliente, httpOptions).pipe(
       tap(_ => this.messageService.add(`Inseriu Cliente`)),
-      catchError(this.messageService.handleError<any>('Cliente inserirCliente'))
+      catchError(this.messageService.handleError<Cliente>('Cliente inserirCliente'))
     );
   }  
 }

@@ -37,7 +37,12 @@ export class ClienteDetalheComponent implements OnInit {
   salvar(cliente: Cliente): void {
     if( cliente.id)
       this.service.alterarCliente(cliente).subscribe(() => this.gotoClientes(cliente));
-    else
-      this.service.inserirCliente(cliente).subscribe(() => this.gotoClientes(cliente));    
+    else{
+      this.service.inserirCliente(cliente).subscribe(cliente => 
+        {
+          this.gotoClientes(cliente);
+        }
+      );  
+    }
   }  
 }
