@@ -5,7 +5,7 @@ import { ClienteService} from '../../cliente/cliente.service';
 import { EficaciaCanaisService} from '../eficacia-canais.service';
 import { Router} from '@angular/router';
 import { EficaciaCanais } from '../eficacia-canais';
-
+import { numberValidator,requiredTextValidator } from '../../shared/validators.directive';
 
 @Component({
   selector: 'app-formulario',
@@ -15,29 +15,29 @@ import { EficaciaCanais } from '../eficacia-canais';
 export class FormularioComponent implements OnInit {
   form = new FormGroup({
     cliente: new FormControl('',Validators.required),
-    descricao: new FormControl('',Validators.required),
+    descricao: new FormControl('',requiredTextValidator()),
     dataInicial: new FormControl('',Validators.required),
     dataFinal: new FormControl('',Validators.required),
-    diretoVisitantes: new FormControl('',Validators.required),
-    buscaPagaVisitantes: new FormControl('',Validators.required),
-    organicoVisitantes: new FormControl('',Validators.required),
-    emailVisitantes: new FormControl('',Validators.required),
-    referenciaVisitantes: new FormControl('',Validators.required),
-    diretoLeads: new FormControl('',Validators.required),
-    buscaPagaLeads: new FormControl('',Validators.required),
-    organicoLeads: new FormControl('',Validators.required),
-    emailLeads: new FormControl('',Validators.required),
-    referenciaLeads: new FormControl('',Validators.required),  
-    diretoOportunidades: new FormControl('',Validators.required),
-    buscaPagaOportunidades: new FormControl('',Validators.required),
-    organicoOportunidades: new FormControl('',Validators.required),
-    emailOportunidades: new FormControl('',Validators.required),
-    referenciaOportunidades: new FormControl('',Validators.required),  
-    diretoVendas: new FormControl('',Validators.required),
-    buscaPagaVendas: new FormControl('',Validators.required),
-    organicoVendas: new FormControl('',Validators.required),
-    emailVendas: new FormControl('',Validators.required),
-    referenciaVendas: new FormControl('',Validators.required)    
+    diretoVisitantes: new FormControl('',numberValidator()),
+    buscaPagaVisitantes: new FormControl('',numberValidator()),
+    organicoVisitantes: new FormControl('',numberValidator()),
+    emailVisitantes: new FormControl('',numberValidator()),
+    referenciaVisitantes: new FormControl('',numberValidator()),
+    diretoLeads: new FormControl('',numberValidator()),
+    buscaPagaLeads: new FormControl('',numberValidator()),
+    organicoLeads: new FormControl('',numberValidator()),
+    emailLeads: new FormControl('',numberValidator()),
+    referenciaLeads: new FormControl('',numberValidator()),  
+    diretoOportunidades: new FormControl('',numberValidator()),
+    buscaPagaOportunidades: new FormControl('',numberValidator()),
+    organicoOportunidades: new FormControl('',numberValidator()),
+    emailOportunidades: new FormControl('',numberValidator()),
+    referenciaOportunidades: new FormControl('',numberValidator()),  
+    diretoVendas: new FormControl('',numberValidator()),
+    buscaPagaVendas: new FormControl('',numberValidator()),
+    organicoVendas: new FormControl('',numberValidator()),
+    emailVendas: new FormControl('',numberValidator()),
+    referenciaVendas: new FormControl('',numberValidator())    
   });
 
   clientes: Cliente[]; 
@@ -58,6 +58,18 @@ export class FormularioComponent implements OnInit {
       .subscribe(
         () => this.router.navigate(['/eficacia-canais/relatorio']) 
       );
+  }
+
+  getformErrors() {
+    return Object.keys(this.form.controls).map(key => {
+      const errors = this.form.controls[key].errors;
+      if (errors === null) { return null; }
+      if (errors.required) {
+        return `${key} is required`;
+      } else {
+        return `${key} has an unknown error`;
+      }
+    });
   }
 
 
