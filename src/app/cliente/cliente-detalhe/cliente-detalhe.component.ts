@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
-import { Observable, of, observable } from 'rxjs';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ClienteService }  from '../cliente.service';
-import { switchMap } from 'rxjs/operators';
+import { FormControl, FormGroup } from '@angular/forms';
+import { requiredTextValidator } from '../../shared/validators.directive';
 
 @Component({
   selector: 'app-cliente-detalhe',
@@ -11,7 +11,12 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./cliente-detalhe.component.css']
 })
 export class ClienteDetalheComponent implements OnInit {
-  cliente$: Observable<Cliente>;
+  form = new FormGroup({
+    id: new FormControl(''),    
+    nomeFantasia: new FormControl('',requiredTextValidator())
+  });
+  id : string;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -20,29 +25,35 @@ export class ClienteDetalheComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.cliente$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-       params.get('id')?this.service.obterCliente(params.get('id')):  of(new Cliente())
-      )
-    );    
+
+    this.id =  this.route.snapshot.paramMap.get("id");
+    if(this.id){
+      this.service.obterCliente(this.id).subscribe(cliente => 
+        {
+          this.form.patchValue(cliente);
+        }
+      ); 
+    }
   }
 
-  gotoClientes(cliente: Cliente) {
-    if( cliente.id)
-      this.router.navigate(['/clientes', { id: cliente.id }]);    
+
+
+  gotoClientes() {
+    if(this.id)
+      this.router.navigate(['/clientes', { id: this.id }]);    
     else
       this.router.navigate(['/clientes']);    
-  }
+  }  
 
-  salvar(cliente: Cliente): void {
-    if( cliente.id)
-      this.service.alterarCliente(cliente).subscribe(() => this.gotoClientes(cliente));
-    else{
-      this.service.inserirCliente(cliente).subscribe(cliente => 
-        {
-          this.gotoClientes(cliente);
-        }
-      );  
+
+
+  onSubmit({ value }: { value: Cliente}) {
+    if( this.id){
+      this.service.alterarCliente(value).subscribe(() => this.gotoClientes());
     }
+    else{
+      value.id = 0;
+      this.service.inserirCliente(value).subscribe(()=>this.gotoClientes());
+    }    
   }  
 }

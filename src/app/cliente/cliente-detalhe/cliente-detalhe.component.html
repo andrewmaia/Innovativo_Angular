@@ -1,14 +1,15 @@
 <h2>Cliente</h2>
-<div *ngIf="cliente$ | async as cliente">
-  <div>
-    <label>Id:</label>{{ cliente.id }}
-  </div>
-  <div>
-    <label>Nome Fantasia:</label>
-    <input [(ngModel)]="cliente.nomeFantasia" placeholder="Nome Fantasia"/>
-  </div>
-  <p>
-    <button (click)="gotoClientes(cliente)">Voltar</button>
-    <button (click)="salvar(cliente)">Salvar</button>    
-  </p>
-</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input id="id" formControlName="id" type="text" class="form-control"  readonly>
+    </div>
+    <div class="form-group">
+        <label for="nomeFantasia">Nome Fantasia</label>
+        <input id="nomeFantasia" formControlName="nomeFantasia" type="text" class="form-control" required>
+    </div>    
+    <div class="col-md-11 text-center"> 
+        <button type="submit" class="btn btn-primary float-center" [disabled]="!form.valid">Salvar</button>
+        <button (click)="gotoClientes()" class="btn btn-primary float-center">Voltar</button>        
+    </div> 
+</form>
