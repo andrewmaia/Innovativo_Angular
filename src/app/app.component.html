@@ -1,9 +1,9 @@
 <div id="wrapperPrincipal">
     <div id="cabecalho"> <app-login-info></app-login-info></div>
     <div id="menu">
-        <nav>
-            <a class = "menuLink" routerLink="/admin" routerLinkActive="active">Admin</a>  
-            <a class = "menuLink" routerLink="/clientes" routerLinkActive="active">Clientes</a>              
+        <nav *ngIf="authService.isLoggedIn()">
+            <a *ngIf="authService.ehAdm()" class = "menuLink" routerLink="/admin" routerLinkActive="active">Admin</a>  
+            <a *ngIf="authService.ehAdm()"class = "menuLink" routerLink="/clientes" routerLinkActive="active">Clientes</a>              
             <a class = "menuLink" routerLink="/eficacia-canais/relatorio" routerLinkActive="active">Eficácia dos Canais</a>
         </nav>
     </div>

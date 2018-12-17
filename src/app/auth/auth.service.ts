@@ -39,6 +39,17 @@ export class AuthService {
 
   usuario(): string{
     return JSON.parse(localStorage.getItem('usuario')).usuario;
+  }
+  
+  papeis(): string{
+    if(localStorage.getItem('usuario'))
+      return JSON.parse(localStorage.getItem('usuario')).papeis;
+    else
+      return '';
+  }  
+
+  ehAdm(): boolean{
+    return this.papeis().includes('admin');
   }  
 
   logout(): void {

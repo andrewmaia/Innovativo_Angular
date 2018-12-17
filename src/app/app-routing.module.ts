@@ -8,7 +8,8 @@ const appRoutes: Routes = [
   {
     path: 'admin',
     loadChildren: './admin/admin.module#AdminModule',
-    canLoad: [AuthGuard]
+    canLoad: [AuthGuard],
+    data:{papel:'admin'}  
   },  
   { path: '',   redirectTo: '/clientes', pathMatch: 'full' },  
   { path: '**', component: PaginaNaoEncontradaComponent }
