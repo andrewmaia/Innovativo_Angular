@@ -10,8 +10,7 @@ export class MessageService {
 
   handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error); // log to console instead
-      this.add(`${operation} failed: ${error.message}`);
+      this.add(`${operation} falhou: ${error}`);
       return of(result as T);
     };
   }

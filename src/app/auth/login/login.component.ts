@@ -24,8 +24,6 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    this.message = 'Logando ...';
-
 
     this.authService.login(this.form.get('usuario').value,this.form.get('senha').value).subscribe(() => {
       this.setMessage();
@@ -33,7 +31,9 @@ export class LoginComponent {
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
         this.router.navigate([redirect]);
       }
-    });
+    }
+    ,erro=> this.message=erro
+    );
   }
 
 
