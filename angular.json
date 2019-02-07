@@ -20,12 +20,28 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/theme"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/theme/css/colors/blue.css"
+
+          
             ],
             "scripts": [
+              "src/theme/plugins/jquery/jquery.min.js",
+              "src/theme/plugins/bootstrap/js/tether.min.js",
+              "src/theme/js/jquery.slimscroll.js",
+              "src/theme/js/waves.js",
+              "src/theme/js/sidebarmenu.js",
+              "src/theme/plugins/sticky-kit-master/dist/sticky-kit.min.js",
+              "src/theme/js/custom.min.js",
+              "src/theme/plugins/chartist-js/dist/chartist.min.js",
+              "src/theme/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js",
+              "src/theme/plugins/d3/d3.min.js",
+              "src/theme/plugins/c3-master/c3.min.js",
+              "src/theme/js/dashboard1.js"              
             ]
           },
           "configurations": {
