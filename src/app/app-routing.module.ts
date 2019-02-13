@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { AuthGuard }                          from './auth/auth.guard';
+import { MainComponent } from './dashboard/main/main.component';
 
 
 const appRoutes: Routes = [
@@ -11,6 +12,7 @@ const appRoutes: Routes = [
     canLoad: [AuthGuard],
     data:{papel:'admin'}  
   },  
+  { path: 'dashboard', component: MainComponent },  
   { path: '',   redirectTo: '/clientes', pathMatch: 'full' },  
   { path: '**', component: PaginaNaoEncontradaComponent }
 ]

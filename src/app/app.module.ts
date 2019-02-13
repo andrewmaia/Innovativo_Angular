@@ -13,6 +13,7 @@ import { LoginInfoComponent }         from './auth/login-info/login-info.compone
 import { EficaciaCanaisModule }              from './eficacia-canais/eficacia-canais.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { JwtInterceptor } from './jwt.interceptor';
+import { MainComponent } from './dashboard/main/main.component';
 
 
 
@@ -21,7 +22,8 @@ import { JwtInterceptor } from './jwt.interceptor';
     AppComponent,
     MessagesComponent,
     PaginaNaoEncontradaComponent,
-    LoginInfoComponent
+    LoginInfoComponent,
+    MainComponent
 
   ],
   imports: [
