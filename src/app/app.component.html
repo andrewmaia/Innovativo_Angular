@@ -1,5 +1,5 @@
 
-<div *ngIf="authService.isLoggedIn()">
+<div>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -15,7 +15,7 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar">
-            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light" >
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
@@ -36,7 +36,7 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                <div class="navbar-collapse">
+                <div class="navbar-collapse" *ngIf="authService.isLoggedIn()">
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
@@ -71,7 +71,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar">
+        <aside class="left-sidebar" *ngIf="authService.isLoggedIn()">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
@@ -107,6 +107,5 @@
     <!-- End Wrapper -->
     <!-- ============================================================== -->
 </div>
-<div *ngIf="!authService.isLoggedIn()"><router-outlet name="loginOut"></router-outlet></div>
 
          

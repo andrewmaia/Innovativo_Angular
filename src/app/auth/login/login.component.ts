@@ -16,17 +16,11 @@ export class LoginComponent {
   });  
 
   constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
-  }
-
-  setMessage() {
-    this.message = (this.authService.isLoggedIn() ? this.authService.usuario() + ' logado' : '');
   }
 
   onSubmit() {
 
     this.authService.login(this.form.get('usuario').value,this.form.get('senha').value).subscribe(() => {
-      this.setMessage();
       if (this.authService.isLoggedIn()) {
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
         this.router.navigate([redirect]);
@@ -39,6 +33,5 @@ export class LoginComponent {
 
   logout() {
     this.authService.logout();
-    this.setMessage();
   }
 }
