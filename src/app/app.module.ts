@@ -12,6 +12,7 @@ import { AuthModule }              from './auth/auth.module';
 import { LoginInfoComponent }         from './auth/login-info/login-info.component';
 import { EficaciaCanaisModule }              from './eficacia-canais/eficacia-canais.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { UsuarioModule } from './usuario/usuario.module';
 import { JwtInterceptor } from './jwt.interceptor';
 import { MainComponent } from './dashboard/main/main.component';
 
@@ -33,7 +34,8 @@ import { MainComponent } from './dashboard/main/main.component';
     ReactiveFormsModule,
     AuthModule,  
     EficaciaCanaisModule,  
-    ClienteModule,        
+    ClienteModule,
+    UsuarioModule,            
     AppRoutingModule, 
   ],
   providers: [

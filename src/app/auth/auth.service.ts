@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   usuario(): string{
-    return JSON.parse(localStorage.getItem('usuario')).usuario;
+    return JSON.parse(localStorage.getItem('usuario')).nome;
   }
   
   papeis(): string{

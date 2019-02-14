@@ -32,7 +32,7 @@
                   <div class="card-block">
                       <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="form-horizontal form-material" *ngIf="!authService.isLoggedIn()">
                           <div class="form-group">
-                              <label for="usuario" class="col-md-12">Usuário</label>
+                              <label for="usuario" class="col-md-12">Email</label>
                               <div class="col-md-12">
                                   <input id="usuario" formControlName="usuario" type="text" class="form-control form-control-line">
                               </div>
