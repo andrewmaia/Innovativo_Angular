@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     data:{papel:'admin'}  
   },  
   { path: 'dashboard', component: MainComponent },  
-  { path: '',   redirectTo: '/clientes', pathMatch: 'full' },  
+  { path: '',   redirectTo: '/eficacia-canais/relatorio', pathMatch: 'full' },  
   { path: '**', component: PaginaNaoEncontradaComponent }
 ]
 
