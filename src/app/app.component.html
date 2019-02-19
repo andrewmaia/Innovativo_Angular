@@ -36,9 +36,9 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                <div class="navbar-collapse" *ngIf="authService.isLoggedIn()">
+                <div  [ngClass]="authService.isLoggedIn()?'navbar-collapse':'navbar-collapse esconder'"  >
                     <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
+                    <!-- toggle and nav items --> 
                     <!-- ============================================================== -->
                     <ul class="navbar-nav mr-auto mt-md-0">
                         <!-- This is  -->
@@ -59,7 +59,7 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá, {{authService.usuario()}}</a>
+                            <a *ngIf="authService.ehAdm()" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá, {{authService.usuario()}}</a>
                         </li>
                     </ul>
                 </div>

@@ -4,7 +4,8 @@ Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: js
 */
-$(function() {
+function init()
+{
     "use strict";
     // ============================================================== 
     // Sales overview
@@ -108,8 +109,5 @@ $(function() {
         }
     });
 
+}
 
-
-
-
-});
