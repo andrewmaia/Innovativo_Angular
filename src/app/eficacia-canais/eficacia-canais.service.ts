@@ -43,5 +43,9 @@ export class EficaciaCanaisService {
       tap(_ => this.messageService.add(`Inseriu EficaciaCanal`)),
       catchError(this.messageService.handleError<any>('EficaciaCanal inserirRelatorio'))
     );
-  }    
+  }
+  
+  obterUltimo(): Observable<EficaciaCanais> {
+    return this.http.get<EficaciaCanais>(this.apiUrl+'ObterUltimo');
+  }  
 }

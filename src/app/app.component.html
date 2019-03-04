@@ -77,8 +77,10 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/dashboard" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Exemplo Dashboard</span></a>
+                        <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/dashboard-sample" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Exemplo Dashboard</span></a>
                         </li>
+                        <li> <a class="waves-effect waves-dark" routerLink="/dashboard" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        </li>                        
                         <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/clientes" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Clientes</span></a>
                         </li>
                         <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/usuarios" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Usuários</span></a>
@@ -92,9 +94,7 @@
             <!-- End Sidebar scroll-->
             <!-- Bottom points-->
             <div class="sidebar-footer">
-                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
-                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout" (click)="logout()"><i class="mdi mdi-power"></i></a>
+                <!-- item--><a href="" style="width: 100%" class="link" data-toggle="tooltip" title="Logout" (click)="logout()"><i class="mdi mdi-power"></i></a>
             </div>
             <!-- End Bottom points-->
         </aside>

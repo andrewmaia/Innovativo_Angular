@@ -15,6 +15,7 @@ import { ClienteModule } from './cliente/cliente.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { JwtInterceptor } from './jwt.interceptor';
 import { MainComponent } from './dashboard/main/main.component';
+import { ClienteComponent } from './dashboard/cliente/cliente.component';
 
 
 
@@ -24,7 +25,8 @@ import { MainComponent } from './dashboard/main/main.component';
     MessagesComponent,
     PaginaNaoEncontradaComponent,
     LoginInfoComponent,
-    MainComponent
+    MainComponent,
+    ClienteComponent
 
   ],
   imports: [
