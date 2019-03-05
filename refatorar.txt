@@ -25,3 +25,5 @@
 -Pasta Theme: Deixar apenas css e js utilizados
 -app.component: Rever todo html
 -app.component: Popular menus de um json
+-Quando estiver carregando a página exibir o timer
+-Retirar busca da parte superior
