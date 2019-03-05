@@ -1,0 +1,27 @@
+-Retirar Pasta Admin
+-Componente Login retirar metodo logout
+-Quando esperar chamada ajax exibir um desenho de espera
+-Centralizar partes em comuns das paginas no template
+-Estudar classes bootstrap col-md-5 col-8 col-lg-8 col-xlg-9 col-md-7 card-block row container-fluid table-responsive
+-Melhor Forma para Mapa do Site e nome da página na parte superior (Home-->Login)
+-Verificar necessidade de utiizar o componente login-info, se não usar excluir
+-Verificar melhor forma de utilizar papeis
+-Tratamento de erros inesperados. Apresentar página genérica
+-Retirar todos os atributos Styles
+-Melhor Layout para botões
+-Innovativo 2019 com ano dinamico
+-Componente cliente-detalhe e cliente-lista, retirar id no gotoClientes
+-Retirar componente messages e messageService
+-Criar diretiva (componente) para char em pizza do eficacia de canais. Amarrar execução de JavaScript da biblioteca de forma correta com o angular
+-Criar um pasta para models, levar todos os models para la e avaliar utilização de cada model
+-Cadastro de Eficacia de Canais: Adicionar validação de valores do relatorio: Visitantes>Leads>Oportunidades>Vendas
+-Cadastro de Eficacia de Canais: Um período de um cliente não pode invadir outro relatorio
+-Cadastro de Eficacia de Canais: verificar exclusao do metodo getformErrors
+-Excluir forbiddenNameValidator
+-Criar routing para dashboard
+-Usuario retirar tratamento de ID do gotoUsuarios
+-Retirar links css da index.html
+-Jwt Interceptor: Testar trecho if (err.status === 401) {
+-Pasta Theme: Deixar apenas css e js utilizados
+-app.component: Rever todo html
+-app.component: Popular menus de um json
