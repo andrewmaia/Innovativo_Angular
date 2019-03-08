@@ -1,5 +1,3 @@
--Retirar Pasta Admin
--Componente Login retirar metodo logout
 -Quando esperar chamada ajax exibir um desenho de espera
 -Centralizar partes em comuns das paginas no template
 -Estudar classes bootstrap col-md-5 col-8 col-lg-8 col-xlg-9 col-md-7 card-block row container-fluid table-responsive
@@ -17,7 +15,6 @@
 -Cadastro de Eficacia de Canais: Adicionar validação de valores do relatorio: Visitantes>Leads>Oportunidades>Vendas
 -Cadastro de Eficacia de Canais: Um período de um cliente não pode invadir outro relatorio
 -Cadastro de Eficacia de Canais: verificar exclusao do metodo getformErrors
--Excluir forbiddenNameValidator
 -Criar routing para dashboard
 -Usuario retirar tratamento de ID do gotoUsuarios
 -Retirar links css da index.html
