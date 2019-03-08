@@ -6,12 +6,6 @@ import { ClienteComponent } from './dashboard/cliente/cliente.component';
 import { MainComponent } from './dashboard/main/main.component';
 
 const appRoutes: Routes = [
-  {
-    path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule',
-    canLoad: [AuthGuard],
-    data:{papel:'admin'}  
-  },  
   { path: 'dashboard', component: ClienteComponent },  
   { path: 'dashboard-sample', canActivate: [AuthGuard],    data:{papel:'admin'},   component: MainComponent },   
   { path: '',   redirectTo: '/eficacia-canais/relatorio', pathMatch: 'full' },  
