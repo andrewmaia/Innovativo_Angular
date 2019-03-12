@@ -16,7 +16,13 @@ export class ClienteComponent implements OnInit,AfterViewInit  {
   ngOnInit() {
 
   }
+  obterNomePagina(){
+    return "Dashboard";
+  }
 
+  obterCaminho(){
+    return ['Home','Dashboard'];
+  }
   ngAfterViewInit() {
     this.eficaciaCanaisService.obterUltimo().subscribe(efc=>{
         if (efc==null)
@@ -165,4 +171,6 @@ export class ClienteComponent implements OnInit,AfterViewInit  {
     });     
 
  }  
+
+
 }

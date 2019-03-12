@@ -1,177 +1,130 @@
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
-<div class="page-wrapper">
-  <!-- ============================================================== -->
-  <!-- Container fluid  -->
-  <!-- ============================================================== -->
-  <div class="container-fluid">
-      <!-- ============================================================== -->
-      <!-- Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
-      <div class="row page-titles">
-          <div class="col-md-5 col-8 align-self-center">
-              <h3 class="text-themecolor m-b-0 m-t-0">{{ titulo }}</h3>
-              <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                  <li class="breadcrumb-item active">Eficácia dos Canais</li>
-              </ol>
-          </div>
-      </div>
-      <!-- ============================================================== -->
-      <!-- End Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Start Page Content -->
-      <!-- ============================================================== -->
-      <!-- Row -->
-      <div class="row">
-          <!-- Column -->
-          <div class="col-lg-8 col-xlg-9 col-md-7">
-              <div class="card">
-                  <div class="card-block">
-                      <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="form-horizontal form-material">
-                          <div class="form-group">
-                              <label class="col-sm-12">Cliente</label>
-                              <div class="col-sm-12">
-                                  <select  id="cliente" formControlName="cliente" class="form-control form-control-line" required>
-                                      <option [value]="c.id" *ngFor="let c of clientes">{{c.nomeFantasia}}</option>
-                                  </select>
-                              </div>
-                          </div>   
-                          <div class="form-group">
-                              <label for="descricao" class="col-md-12">Descrição do Relatório</label>
-                              <div class="col-md-12">
-                                  <input id="descricao" formControlName="descricao" type="text" class="form-control form-control-line" required>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-12">Período</label>
-                              <div class="col-md-12">
-                                  <input formControlName="dataInicial" type="date"  class="form-control form-control-line" required>
-                                  à
-                                  <input formControlName="dataFinal" type="date"  class="form-control form-control-line"  required>                                   
-                              </div>
-                          </div>
-                          <div class="table-responsive">
-                              <table class="table">
-                                <thead>
-                                  <tr>
-                                      <th></th>
-                                      <th>Direto</th> 
-                                      <th>Busca Paga</th>
-                                      <th>Orgânico</th>
-                                      <th>E-mail</th>
-                                      <th>Referência</th>   
-                                  </tr>  
-                                </thead>      
-                                <tbody>
-                                    <tr>
-                                        <td>Visitantes</td>
-                                        <td>
-                                          <input type="text" formControlName="diretoVisitantes" class="form-control" required/>
-                                        </td> 
-                                        <td>
-                                          <input type="text" formControlName="buscaPagaVisitantes" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="organicoVisitantes" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="emailVisitantes" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="referenciaVisitantes" class="form-control" required>
-                                        </td>    
-                                      </tr>
-                                      <tr>
-                                        <td>Leads</td>
-                                        <td>
-                                          <input type="text" formControlName="diretoLeads" class="form-control" required/>
-                                        </td> 
-                                        <td>
-                                          <input type="text" formControlName="buscaPagaLeads" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="organicoLeads" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="emailLeads" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="referenciaLeads" class="form-control" required>
-                                        </td>    
-                                      </tr>
-                                      <tr>
-                                        <td>Oportunidades</td>
-                                        <td>
-                                          <input type="text" formControlName="diretoOportunidades" class="form-control" required/>
-                                        </td> 
-                                        <td>
-                                          <input type="text" formControlName="buscaPagaOportunidades" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="organicoOportunidades" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="emailOportunidades" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="referenciaOportunidades" class="form-control" required>
-                                        </td>    
-                                      </tr>
-                                      <tr>
-                                        <td>Vendas</td>
-                                        <td>
-                                          <input type="text" formControlName="diretoVendas" class="form-control" required/>
-                                        </td> 
-                                        <td>
-                                          <input type="text" formControlName="buscaPagaVendas" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="organicoVendas" class="form-control" required>
-                                        </td>
-                                        <td>
-                                          <input type="text" formControlName="emailVendas" class="form-control" required>
-                                       </td>
-                                        <td>
-                                          <input type="text" formControlName="referenciaVendas" class="form-control" required>
-                                        </td>    
-                                      </tr>  
-                                </tbody>      
-                              </table>                          
-                          </div>
-                          <div class="form-group">
-                              <div class="col-sm-12">
-                                  <button type="submit" class="btn btn-success" [disabled]="!form.valid">Salvar</button>
-                              </div>
-                          </div>                                                                            
-                      </form>
-                  </div>
-              </div>
-          </div>
-          <!-- Column -->
-      </div>
-      <!-- Row -->
-      <!-- ============================================================== -->
-      <!-- End PAge Content -->
-      <!-- ============================================================== -->
-  </div>
-  <!-- ============================================================== -->
-  <!-- End Container fluid  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- footer -->
-  <!-- ============================================================== -->
-  <footer class="footer">
-      Innovativo 2019
-  </footer>
-  <!-- ============================================================== -->
-  <!-- End footer -->
-  <!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <div class="card-block">
+                <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="form-horizontal form-material">
+                    <div class="form-group">
+                        <label class="col-sm-12">Cliente</label>
+                        <div class="col-sm-12">
+                            <select  id="cliente" formControlName="cliente" class="form-control form-control-line" required>
+                                <option [value]="c.id" *ngFor="let c of clientes">{{c.nomeFantasia}}</option>
+                            </select>
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label for="descricao" class="col-md-12">Descrição do Relatório</label>
+                        <div class="col-md-12">
+                            <input id="descricao" formControlName="descricao" type="text" class="form-control form-control-line" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Período</label>
+                        <div class="col-md-12">
+                            <input formControlName="dataInicial" type="date"  class="form-control form-control-line" required>
+                            à
+                            <input formControlName="dataFinal" type="date"  class="form-control form-control-line"  required>                                   
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                                <th></th>
+                                <th>Direto</th> 
+                                <th>Busca Paga</th>
+                                <th>Orgânico</th>
+                                <th>E-mail</th>
+                                <th>Referência</th>   
+                            </tr>  
+                          </thead>      
+                          <tbody>
+                              <tr>
+                                  <td>Visitantes</td>
+                                  <td>
+                                    <input type="text" formControlName="diretoVisitantes" class="form-control" required/>
+                                  </td> 
+                                  <td>
+                                    <input type="text" formControlName="buscaPagaVisitantes" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="organicoVisitantes" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="emailVisitantes" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="referenciaVisitantes" class="form-control" required>
+                                  </td>    
+                                </tr>
+                                <tr>
+                                  <td>Leads</td>
+                                  <td>
+                                    <input type="text" formControlName="diretoLeads" class="form-control" required/>
+                                  </td> 
+                                  <td>
+                                    <input type="text" formControlName="buscaPagaLeads" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="organicoLeads" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="emailLeads" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="referenciaLeads" class="form-control" required>
+                                  </td>    
+                                </tr>
+                                <tr>
+                                  <td>Oportunidades</td>
+                                  <td>
+                                    <input type="text" formControlName="diretoOportunidades" class="form-control" required/>
+                                  </td> 
+                                  <td>
+                                    <input type="text" formControlName="buscaPagaOportunidades" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="organicoOportunidades" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="emailOportunidades" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="referenciaOportunidades" class="form-control" required>
+                                  </td>    
+                                </tr>
+                                <tr>
+                                  <td>Vendas</td>
+                                  <td>
+                                    <input type="text" formControlName="diretoVendas" class="form-control" required/>
+                                  </td> 
+                                  <td>
+                                    <input type="text" formControlName="buscaPagaVendas" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="organicoVendas" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="emailVendas" class="form-control" required>
+                                  </td>
+                                  <td>
+                                    <input type="text" formControlName="referenciaVendas" class="form-control" required>
+                                  </td>    
+                                </tr>  
+                          </tbody>      
+                        </table>                          
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-success" [disabled]="!form.valid">Salvar</button>
+                        </div>
+                    </div>                                                                            
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
 </div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
-
+<!-- Row -->
 

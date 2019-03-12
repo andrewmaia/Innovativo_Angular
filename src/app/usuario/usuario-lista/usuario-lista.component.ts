@@ -27,6 +27,12 @@ export class UsuarioListaComponent implements OnInit {
       })
     );     
   }
+  obterNomePagina(){
+    return "Usuários";
+  }
 
+  obterCaminho(){
+    return ['Home','Usuários'];
+  }
 }
 

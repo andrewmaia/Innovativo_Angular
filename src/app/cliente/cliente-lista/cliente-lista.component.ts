@@ -27,4 +27,12 @@ export class ClienteListaComponent implements OnInit {
       })
     );    
   }
+
+  obterNomePagina(){
+    return "Clientes";
+  }
+
+  obterCaminho(){
+    return ['Home','Clientes'];
+  }  
 }

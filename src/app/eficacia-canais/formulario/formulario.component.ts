@@ -49,6 +49,14 @@ export class FormularioComponent implements OnInit {
     private router: Router
   ) { }
 
+  obterNomePagina(){
+    return this.titulo;
+  }
+
+  obterCaminho(){
+    return ['Home','Eficácia dos Canais'];
+  }  
+
   ngOnInit() {
     this.clienteService.obterClientes().subscribe(clientes=>this.clientes=clientes);
   }

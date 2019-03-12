@@ -30,6 +30,13 @@ export class UsuarioDetalheComponent implements OnInit {
     private clienteService: ClienteService      
   ) {}
 
+  obterNomePagina(){
+    return "Usuário";
+  }
+
+  obterCaminho(){
+    return ['Home','Usuário'];
+  }
   ngOnInit() {
     this.clienteService.obterClientes().subscribe(clientes=>this.clientes=clientes);
     this.id =  this.route.snapshot.paramMap.get("id");

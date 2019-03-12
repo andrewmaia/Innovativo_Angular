@@ -21,6 +21,14 @@ export class RelatorioComponent implements OnInit {
     this.obterRelatorio();    
   }
 
+  obterNomePagina(){
+    return "Eficácia dos Canais de Aquisição";
+  }
+
+  obterCaminho(){
+    return ['Home','Eficácia dos Canais'];
+  }  
+
   obterRelatorio():void{
     this.ec$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>

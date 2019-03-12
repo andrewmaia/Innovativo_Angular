@@ -16,6 +16,12 @@ export class MainComponent implements OnInit,AfterViewInit {
   ngAfterViewInit() {
     init();
   }
+  obterNomePagina(){
+    return "Dashboard";
+  }
 
+  obterCaminho(){
+    return ['Home','Dashboard'];
+  }
 }
 

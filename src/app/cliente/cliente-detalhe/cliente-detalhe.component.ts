@@ -55,5 +55,14 @@ export class ClienteDetalheComponent implements OnInit {
       value.id = 0;
       this.service.inserirCliente(value).subscribe(()=>this.gotoClientes());
     }    
+  }
+  
+  obterNomePagina(){
+    return "Cliente";
+  }
+
+  obterCaminho(){
+    return ['Home','Cliente'];
   }  
+  
 }

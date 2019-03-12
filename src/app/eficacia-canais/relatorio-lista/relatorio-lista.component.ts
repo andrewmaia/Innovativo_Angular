@@ -16,7 +16,14 @@ export class RelatorioListaComponent implements OnInit {
   ngOnInit() {
     this.eficaciaCanalRelatorioLista$ = this.service.obterRelatorios();
   }
+  
+  obterNomePagina(){
+    return "Relatórios Disponíveis";
+  }
 
+  obterCaminho(){
+    return ['Home','Eficácia dos Canais'];
+  }
 }
 
 

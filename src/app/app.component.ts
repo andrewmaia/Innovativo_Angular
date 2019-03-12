@@ -8,11 +8,17 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Innovativo';
+  nomePagina;
+  caminhoLista;
   constructor(public authService: AuthService) { }  
 
   logout() {
     this.authService.logout();
     window.location.reload();
+  }  
+
+  onActivate(componentRef){
+    this.nomePagina=componentRef.obterNomePagina();
+    this.caminhoLista = componentRef.obterCaminho();
   }  
 }

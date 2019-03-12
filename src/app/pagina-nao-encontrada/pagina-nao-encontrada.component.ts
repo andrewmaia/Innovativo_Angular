@@ -12,4 +12,11 @@ export class PaginaNaoEncontradaComponent implements OnInit {
   ngOnInit() {
   }
 
+  obterNomePagina(){
+    return "Página Não Encontrada";
+  }
+
+  obterCaminho(){
+    return null;
+  }
 }

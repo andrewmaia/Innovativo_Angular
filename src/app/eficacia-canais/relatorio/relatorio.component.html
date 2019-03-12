@@ -1,109 +1,59 @@
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
-<div class="page-wrapper">
-  <!-- ============================================================== -->
-  <!-- Container fluid  -->
-  <!-- ============================================================== -->
-  <div class="container-fluid">
-      <!-- ============================================================== -->
-      <!-- Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
-      <div class="row page-titles">
-          <div class="col-md-5 col-8 align-self-center">
-              <h3 class="text-themecolor m-b-0 m-t-0">Eficácia dos Canais de Aquisição</h3>
-              <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                  <li class="breadcrumb-item active">Eficácia dos Canais</li>
-              </ol>
-          </div>
-      </div>
-      <!-- ============================================================== -->
-      <!-- End Bread crumb and right sidebar toggle -->
-      <!-- ============================================================== -->
-      <!-- ============================================================== -->
-      <!-- Start Page Content -->
-      <!-- ============================================================== -->
-      <div class="row">
-          <!-- column -->
-          <div class="col-lg-12">
-              <div class="card">
-                  <div class="card-block">
-                      <div class="table-responsive">
-                        <div *ngIf="ec$ | async as ec">
-                          <table class="table">
-                            <thead>
-                              <tr>
-                                <th></th>
-                                <th>Direto</th> 
-                                <th>Busca Paga</th>
-                                <th>Orgânico</th>
-                                <th>E-mail</th>
-                                <th>Referência</th>    
-                              </tr>  
-                            </thead>      
-                            <tbody>
-                              <tr>
-                                <td>Visitantes</td>
-                                <td>{{ ec.diretoVisitantes }}</td> 
-                                <td>{{ ec.buscaPagaVisitantes }}</td>
-                                <td>{{ ec.organicoVisitantes }}</td>
-                                <td>{{ ec.emailVisitantes }}</td>
-                                <td>{{ ec.referenciaVisitantes }}</td>      
-                              </tr>
-                              <tr>
-                                <td>Leads</td>
-                                <td>{{ ec.diretoLeads }}</td> 
-                                <td>{{ ec.buscaPagaLeads }}</td>
-                                <td>{{ ec.organicoLeads }}</td>
-                                <td>{{ ec.emailLeads }}</td>
-                                <td>{{ ec.referenciaLeads }}</td> 
-                              </tr>
-                              <tr>
-                                <td>Oportunidades</td>
-                                <td>{{ ec.diretoOportunidades }}</td> 
-                                <td>{{ ec.buscaPagaOportunidades }}</td>
-                                <td>{{ ec.organicoOportunidades }}</td>
-                                <td>{{ ec.emailOportunidades }}</td>
-                                <td>{{ ec.referenciaOportunidades }}</td>
-                              </tr>    
-                              <tr>
-                                <td>Vendas</td>
-                                <td>{{ ec.diretoVendas }}</td> 
-                                <td>{{ ec.buscaPagaVendas }}</td>
-                                <td>{{ ec.organicoVendas }}</td>
-                                <td>{{ ec.emailVendas }}</td>
-                                <td>{{ ec.referenciaVendas }}</td>
-                              </tr>
-                            </tbody>      
-                          </table>
-                        </div>                          
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- ============================================================== -->
-      <!-- End Page Content -->
-      <!-- ============================================================== -->
-  </div>
-  <!-- ============================================================== -->
-  <!-- End Container fluid  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- footer -->
-  <!-- ============================================================== -->
-  <footer class="footer">
-      Innovativo 2019
-  </footer>
-  <!-- ============================================================== -->
-  <!-- End footer -->
-  <!-- ============================================================== -->
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block">
+                <div class="table-responsive">
+                  <div *ngIf="ec$ | async as ec">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Direto</th> 
+                          <th>Busca Paga</th>
+                          <th>Orgânico</th>
+                          <th>E-mail</th>
+                          <th>Referência</th>    
+                        </tr>  
+                      </thead>      
+                      <tbody>
+                        <tr>
+                          <td>Visitantes</td>
+                          <td>{{ ec.diretoVisitantes }}</td> 
+                          <td>{{ ec.buscaPagaVisitantes }}</td>
+                          <td>{{ ec.organicoVisitantes }}</td>
+                          <td>{{ ec.emailVisitantes }}</td>
+                          <td>{{ ec.referenciaVisitantes }}</td>      
+                        </tr>
+                        <tr>
+                          <td>Leads</td>
+                          <td>{{ ec.diretoLeads }}</td> 
+                          <td>{{ ec.buscaPagaLeads }}</td>
+                          <td>{{ ec.organicoLeads }}</td>
+                          <td>{{ ec.emailLeads }}</td>
+                          <td>{{ ec.referenciaLeads }}</td> 
+                        </tr>
+                        <tr>
+                          <td>Oportunidades</td>
+                          <td>{{ ec.diretoOportunidades }}</td> 
+                          <td>{{ ec.buscaPagaOportunidades }}</td>
+                          <td>{{ ec.organicoOportunidades }}</td>
+                          <td>{{ ec.emailOportunidades }}</td>
+                          <td>{{ ec.referenciaOportunidades }}</td>
+                        </tr>    
+                        <tr>
+                          <td>Vendas</td>
+                          <td>{{ ec.diretoVendas }}</td> 
+                          <td>{{ ec.buscaPagaVendas }}</td>
+                          <td>{{ ec.organicoVendas }}</td>
+                          <td>{{ ec.emailVendas }}</td>
+                          <td>{{ ec.referenciaVendas }}</td>
+                        </tr>
+                      </tbody>      
+                    </table>
+                  </div>                          
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
-
-
-
-
