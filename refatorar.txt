@@ -6,7 +6,6 @@
 -Tratamento de erros inesperados. Apresentar página genérica
 -Retirar todos os atributos Styles
 -Melhor Layout para botões
--Innovativo 2019 com ano dinamico
 -Componente cliente-detalhe e cliente-lista, retirar id no gotoClientes
 -Retirar componente messages e messageService
 -Criar diretiva (componente) para char em pizza do eficacia de canais. Amarrar execução de JavaScript da biblioteca de forma correta com o angular

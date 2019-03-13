@@ -7,10 +7,15 @@ import { AuthService } from './auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements OnInit {
   nomePagina;
   caminhoLista;
+  ano;
   constructor(public authService: AuthService) { }  
+
+  ngOnInit() {
+    this.ano =(new Date()).getFullYear();
+  }
 
   logout() {
     this.authService.logout();
