@@ -1,7 +1,5 @@
 -Quando esperar chamada ajax exibir um desenho de espera
 -Estudar classes bootstrap col-md-5 col-8 col-lg-8 col-xlg-9 col-md-7 card-block row container-fluid table-responsive
--Melhor Forma para Mapa do Site e nome da página na parte superior (Home-->Login)
--Verificar necessidade de utiizar o componente login-info, se não usar excluir
 -Verificar melhor forma de utilizar papeis
 -Tratamento de erros inesperados. Apresentar página genérica
 -Retirar todos os atributos Styles

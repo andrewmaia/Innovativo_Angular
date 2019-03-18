@@ -30,6 +30,15 @@ export class LoginComponent {
     );
   }
 
+  
+  obterNomePagina(){
+    return "Login";
+  }  
+
+  obterCaminho(){
+    null;
+  }   
+
 
 
 }
