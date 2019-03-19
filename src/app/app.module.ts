@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
-import { MessagesComponent } from './messages/messages.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule }              from './auth/auth.module';
-import { EficaciaCanaisModule }              from './eficacia-canais/eficacia-canais.module';
+import { EficaciaCanaisModule }  from './eficacia-canais/eficacia-canais.module';
+import { DashboardModule }  from './dashboard/dashboard.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { JwtInterceptor } from './jwt.interceptor';
@@ -21,7 +20,6 @@ import { ClienteComponent } from './dashboard/cliente/cliente.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MessagesComponent,
     PaginaNaoEncontradaComponent,
     MainComponent,
     ClienteComponent
@@ -34,6 +32,7 @@ import { ClienteComponent } from './dashboard/cliente/cliente.component';
     ReactiveFormsModule,
     AuthModule,  
     EficaciaCanaisModule,  
+    DashboardModule,      
     ClienteModule,
     UsuarioModule,            
     AppRoutingModule, 

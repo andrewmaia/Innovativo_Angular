@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, delay, tap,map } from 'rxjs/operators';
-import {MessageService} from '../message.service';
 import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import * as global from '../global';
 import {throwError} from 'rxjs'; 
@@ -14,7 +13,7 @@ export class AuthService {
   private apiUrl = global.enderecoAPI + 'usuario/autenticar';    
   redirectUrl: string;
 
-  constructor(public messageService:MessageService, private http: HttpClient) { 
+  constructor( private http: HttpClient) { 
   }  
 
   
@@ -23,7 +22,6 @@ export class AuthService {
       .pipe(
         map(usuario => {
           if(usuario && usuario.token){
-            this.messageService.add(`Usuario ${usuario.id} logou`);            
             localStorage.setItem('usuario', JSON.stringify(usuario));            
           }
           return usuario;

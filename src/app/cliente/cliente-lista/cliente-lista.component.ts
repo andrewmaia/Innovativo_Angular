@@ -20,12 +20,7 @@ export class ClienteListaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.clientes$ = this.route.paramMap.pipe(
-      switchMap(params => {
-        this.selectedId = +params.get('id'); //o + na frente converte para number
-        return this.service.obterClientes();
-      })
-    );    
+    this.clientes$ = this.service.obterClientes();
   }
 
   obterNomePagina(){

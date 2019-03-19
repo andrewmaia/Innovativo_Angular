@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from '../message.service';
 import { Observable, of } from 'rxjs';
 import { Cliente } from './cliente';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
@@ -15,35 +14,21 @@ const httpOptions = {
 })
 export class ClienteService {
   private apiUrl = global.enderecoAPI + 'cliente/';  
-  constructor(private messageService: MessageService, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   obterClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(this.apiUrl)
-      .pipe(
-        tap(_ => this.messageService.add('Acessou API Lista de Clientes')),        
-        catchError(this.messageService.handleError<Cliente[]>('Cliente obterClientes'))
-      );   
+    return this.http.get<Cliente[]>(this.apiUrl);
   }  
 
   obterCliente(id:string): Observable<Cliente>  {
-    return this.http.get<Cliente>(this.apiUrl+id)
-      .pipe(
-        tap(_ => this.messageService.add('Acessou API Obter Cliente')),        
-        catchError(this.messageService.handleError<Cliente>('Cliente obterCliente'))
-      );  
+    return this.http.get<Cliente>(this.apiUrl+id);  
   }
   
   alterarCliente (cliente: Cliente): Observable<any> {
-    return this.http.put(this.apiUrl+cliente.id, cliente, httpOptions).pipe(
-      tap(_ => this.messageService.add(`Alterado Cliente id=${cliente.id}`)),
-      catchError(this.messageService.handleError<any>('Cliente alterarCliente'))
-    );
+    return this.http.put(this.apiUrl+cliente.id, cliente, httpOptions);
   }  
 
   inserirCliente (cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(this.apiUrl,cliente, httpOptions).pipe(
-      tap(_ => this.messageService.add(`Inseriu Cliente`)),
-      catchError(this.messageService.handleError<Cliente>('Cliente inserirCliente'))
-    );
+    return this.http.post<Cliente>(this.apiUrl,cliente, httpOptions);
   }  
 }

@@ -39,9 +39,6 @@ export class ClienteDetalheComponent implements OnInit {
 
 
   gotoClientes() {
-    if(this.id)
-      this.router.navigate(['/clientes', { id: this.id }]);    
-    else
       this.router.navigate(['/clientes']);    
   }  
 

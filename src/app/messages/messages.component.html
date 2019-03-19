@@ -1,5 +1,0 @@
-<div *ngIf="messageService.messages.length && messageService.podeExibirMensagens()">
-  <h2>Mensagens</h2>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>  
-  <button class="clear" (click)="messageService.clear()">Limpar</button>
-</div>

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from '../message.service';
 import { Observable, of } from 'rxjs';
 import { Usuario } from './usuario';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
@@ -18,36 +17,22 @@ const httpOptions = {
 
 export class UsuarioService {
   private apiUrl = global.enderecoAPI + 'usuario/';  
-  constructor(private messageService: MessageService, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   obterUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(this.apiUrl)
-      .pipe(
-        tap(_ => this.messageService.add('Acessou API Lista de Usuarios')),        
-        catchError(this.messageService.handleError<Usuario[]>('Usuario obterUsuarios'))
-      );   
+    return this.http.get<Usuario[]>(this.apiUrl);   
   }
   
   obterUsuario(id:string): Observable<Usuario>  {
-    return this.http.get<Usuario>(this.apiUrl+id)
-      .pipe(
-        tap(_ => this.messageService.add('Acessou API Obter Usuario')),        
-        catchError(this.messageService.handleError<Usuario>('Usuario obterUsuario'))
-      );  
+    return this.http.get<Usuario>(this.apiUrl+id);  
   }
   
   alterarUsuario (usuario: Usuario): Observable<any> {
-    return this.http.put(this.apiUrl+usuario.id, usuario, httpOptions).pipe(
-      tap(_ => this.messageService.add(`Alterado Usuario id=${usuario.id}`)),
-      catchError(this.messageService.handleError<any>('Usuario alterarUsuario'))
-    );
+    return this.http.put(this.apiUrl+usuario.id, usuario, httpOptions);
   }  
 
   inserirUsuario (usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.apiUrl,usuario, httpOptions).pipe(
-      tap(_ => this.messageService.add(`Inseriu Usuario`)),
-      catchError(this.messageService.handleError<Usuario>('Usuario inserirUsuario'))
-    );
+    return this.http.post<Usuario>(this.apiUrl,usuario, httpOptions);
   }  
 }
 
