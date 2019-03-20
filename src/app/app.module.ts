@@ -11,9 +11,10 @@ import { EficaciaCanaisModule }  from './eficacia-canais/eficacia-canais.module'
 import { DashboardModule }  from './dashboard/dashboard.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { UsuarioModule } from './usuario/usuario.module';
-import { JwtInterceptor } from './jwt.interceptor';
+import { AppInterceptor } from './app.interceptor';
 import { MainComponent } from './dashboard/main/main.component';
 import { ClienteComponent } from './dashboard/cliente/cliente.component';
+import { ErroComponent } from './erro/erro.component';
 
 
 
@@ -22,7 +23,8 @@ import { ClienteComponent } from './dashboard/cliente/cliente.component';
     AppComponent,
     PaginaNaoEncontradaComponent,
     MainComponent,
-    ClienteComponent
+    ClienteComponent,
+    ErroComponent
 
   ],
   imports: [
@@ -38,7 +40,7 @@ import { ClienteComponent } from './dashboard/cliente/cliente.component';
     AppRoutingModule, 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },    
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },    
   ],
   bootstrap: [AppComponent]
 })

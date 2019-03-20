@@ -1,7 +1,6 @@
 -Quando esperar chamada ajax exibir um desenho de espera
 -Estudar classes bootstrap col-md-5 col-8 col-lg-8 col-xlg-9 col-md-7 card-block row container-fluid table-responsive
 -Verificar melhor forma de utilizar papeis
--Tratamento de erros inesperados. Apresentar página genérica
 -Retirar todos os atributos Styles
 -Melhor Layout para botões
 -Criar diretiva (componente) para char em pizza do eficacia de canais. Amarrar execução de JavaScript da biblioteca de forma correta com o angular

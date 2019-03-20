@@ -3,10 +3,11 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthService }              from './auth/auth.service';
+import {Router} from "@angular/router";
 
 @Injectable()
-export class JwtInterceptor implements HttpInterceptor {
-    constructor(private authService: AuthService) {}
+export class AppInterceptor implements HttpInterceptor {
+    constructor(private authService: AuthService,private router: Router) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         //Obtém o usuário logado
@@ -28,9 +29,17 @@ export class JwtInterceptor implements HttpInterceptor {
                 this.authService.logout();
                 location.reload(true);
             }
+            else{
+                this.router.navigate(['/erro']);    
+            }
             
             const error = err.error.message || err.statusText;
             return throwError(error);
         }))
     }
 }
+
+
+
+
+
