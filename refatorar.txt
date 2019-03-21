@@ -10,7 +10,6 @@
 -Cadastro de Eficacia de Canais: verificar exclusao do metodo getformErrors
 -Usuario retirar tratamento de ID do gotoUsuarios
 -Retirar links css da index.html
--Jwt Interceptor: Testar trecho if (err.status === 401) {
 -Pasta Theme: Deixar apenas css e js utilizados
 -app.component: Rever todo html
 -app.component: Popular menus de um json
