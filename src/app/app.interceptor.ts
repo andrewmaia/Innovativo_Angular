@@ -12,7 +12,7 @@ export class AppInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         //Obtém o usuário logado
         let usuarioCorrente = JSON.parse(localStorage.getItem('usuario'));
-        //Se o usuário estiver logado, adiciona ao cabeçalho da requisição o token de acesso
+        //Se o usuário estiver logado, adiciona ao cabeçalho de todas as requisição o token de acesso
         if (usuarioCorrente && usuarioCorrente.token) {
             request = request.clone({
                 setHeaders: { 
