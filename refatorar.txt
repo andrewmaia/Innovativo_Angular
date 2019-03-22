@@ -8,7 +8,6 @@
 -Cadastro de Eficacia de Canais: Adicionar validação de valores do relatorio: Visitantes>Leads>Oportunidades>Vendas
 -Cadastro de Eficacia de Canais: Um período de um cliente não pode invadir outro relatorio
 -Cadastro de Eficacia de Canais: verificar exclusao do metodo getformErrors
--Usuario retirar tratamento de ID do gotoUsuarios
 -Retirar links css da index.html
 -Pasta Theme: Deixar apenas css e js utilizados
 -app.component: Rever todo html

@@ -12,20 +12,13 @@ import { switchMap } from 'rxjs/operators';
 })
 export class UsuarioListaComponent implements OnInit {
   usuarios$: Observable<Usuario[]>;
-  selectedId: number;  
 
   constructor(
     private service: UsuarioService,
-    private route: ActivatedRoute    
   ) { }
 
   ngOnInit() {
-    this.usuarios$ = this.route.paramMap.pipe(
-      switchMap(params => {
-        this.selectedId = +params.get('id'); //o + na frente converte para number
-        return this.service.obterUsuarios();
-      })
-    );     
+    this.usuarios$ = this.service.obterUsuarios();
   }
   obterNomePagina(){
     return "Usuários";

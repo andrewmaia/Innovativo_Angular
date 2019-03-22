@@ -50,10 +50,7 @@ export class UsuarioDetalheComponent implements OnInit {
   }
 
   gotoUsuarios() {
-    if(this.id)
-      this.router.navigate(['/usuarios', { id: this.id }]);    
-    else
-      this.router.navigate(['/usuarios']);    
+    this.router.navigate(['/usuarios']);    
   }  
 
   onSubmit({ value }: { value: Usuario}) {
