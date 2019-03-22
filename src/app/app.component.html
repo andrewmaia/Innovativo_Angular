@@ -1,4 +1,3 @@
-
 <div>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -21,22 +20,23 @@
                 <!-- ============================================================== -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            
+                        <!-- Logo icon -->
+                        <b>
                             <!-- Light Logo icon -->
                             <img src="../theme/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                            
+                        <!-- Logo text -->
+                        <span>
                             <!-- Light Logo text -->    
-                            <img src="../theme/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                            <img src="../theme/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                <div  [ngClass]="authService.isLoggedIn()?'navbar-collapse':'navbar-collapse esconder'"  >
+                <div *ngIf="authService.isLoggedIn()" class="navbar-collapse" >
                     <!-- ============================================================== -->
                     <!-- toggle and nav items --> 
                     <!-- ============================================================== -->
@@ -53,7 +53,7 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a *ngIf="authService.ehAdm()" class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá, {{authService.usuario()}}</a>
+                            <a  class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Olá, {{authService.usuario()}}</a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +88,7 @@
             <!-- End Sidebar scroll-->
             <!-- Bottom points-->
             <div class="sidebar-footer">
-                <!-- item--><a href="" style="width: 100%" class="link" data-toggle="tooltip" title="Logout" (click)="logout()"><i class="mdi mdi-power"></i></a>
+                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout" (click)="logout()"><i class="mdi mdi-power"></i></a>
             </div>
             <!-- End Bottom points-->
         </aside>
@@ -98,7 +98,8 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div [ngClass]="authService.isLoggedIn() ? 'page-wrapper': 'page-wrapper login'" >
+        
+        <div [ngClass]="['page-wrapper',!authService.isLoggedIn()?'login':'']" >
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -132,7 +133,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer *ngIf="authService.isLoggedIn()" class="footer">
-                Innovativo {{ano}}
+                © {{ano}} Innovativo 
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

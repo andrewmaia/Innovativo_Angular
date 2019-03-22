@@ -9,5 +9,4 @@
 -Cadastro de Eficacia de Canais: Um período de um cliente não pode invadir outro relatorio
 -Cadastro de Eficacia de Canais: verificar exclusao do metodo getformErrors
 -Pasta Theme: Deixar apenas css e js utilizados
--app.component: Rever todo html
 -app.component: Popular menus de um json

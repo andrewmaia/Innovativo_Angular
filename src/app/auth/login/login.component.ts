@@ -22,7 +22,7 @@ export class LoginComponent {
 
     this.authService.login(this.form.get('usuario').value,this.form.get('senha').value).subscribe(() => {
       if (this.authService.isLoggedIn()) {
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
+        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/eficacia-canais/relatorio';
         this.router.navigate([redirect]);
       }
     }

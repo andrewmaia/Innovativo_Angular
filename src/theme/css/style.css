@@ -5493,7 +5493,7 @@ sidebar footer
   border-top: 1px solid rgba(120, 130, 140, 0.13); }
   .sidebar-footer a {
     padding: 15px;
-    width: 33.333337%;
+    width: 100%;
     float: left;
     text-align: center;
     font-size: 18px; }
