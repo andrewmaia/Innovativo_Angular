@@ -71,15 +71,15 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/dashboard-sample" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Exemplo Dashboard</span></a>
+                        <li *ngIf="authService.ehAdm()"> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada('/dashboard-sample')?'active':'']" routerLink="/dashboard-sample" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Exemplo Dashboard</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" routerLink="/dashboard" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
-                        </li>                        
-                        <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/clientes" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Clientes</span></a>
-                        </li>
-                        <li *ngIf="authService.ehAdm()"> <a class="waves-effect waves-dark" routerLink="/usuarios" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Usuários</span></a>
+                        <li> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada('/dashboard')?'active':'']" routerLink="/dashboard" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>                         
-                        <li> <a class="waves-effect waves-dark" routerLink="/eficacia-canais/relatorio/" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Eficácia dos Canais</span></a>
+                        <li *ngIf="authService.ehAdm()"> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada('/clientes')?'active':'']" routerLink="/clientes" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Clientes</span></a>
+                        </li>
+                        <li *ngIf="authService.ehAdm()"> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada('/usuarios')?'active':'']" routerLink="/usuarios" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Usuários</span></a>
+                        </li>                         
+                        <li> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada('/eficacia-canais/relatorio')?'active':'']" routerLink="/eficacia-canais/relatorio/" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Eficácia dos Canais</span></a>
                         </li>
                     </ul>
                 </nav>
