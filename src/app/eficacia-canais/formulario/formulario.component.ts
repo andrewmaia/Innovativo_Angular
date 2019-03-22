@@ -68,18 +68,6 @@ export class FormularioComponent implements OnInit {
       );
   }
 
-  getformErrors() {
-    return Object.keys(this.form.controls).map(key => {
-      const errors = this.form.controls[key].errors;
-      if (errors === null) { return null; }
-      if (errors.required) {
-        return `${key} is required`;
-      } else {
-        return `${key} has an unknown error`;
-      }
-    });
-  }
-
 
 }
 

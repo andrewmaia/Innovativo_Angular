@@ -7,6 +7,5 @@
 -Criar um pasta para models, levar todos os models para la e avaliar utilização de cada model
 -Cadastro de Eficacia de Canais: Adicionar validação de valores do relatorio: Visitantes>Leads>Oportunidades>Vendas
 -Cadastro de Eficacia de Canais: Um período de um cliente não pode invadir outro relatorio
--Cadastro de Eficacia de Canais: verificar exclusao do metodo getformErrors
 -Pasta Theme: Deixar apenas css e js utilizados
 -app.component: Popular menus de um json
