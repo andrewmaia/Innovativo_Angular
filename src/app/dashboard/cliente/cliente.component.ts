@@ -1,5 +1,5 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
-import { EficaciaCanais } from '../../eficacia-canais/eficacia-canais';
+import { EficaciaCanais } from '../../eficacia-canais/models/eficacia-canais.model';
 import { EficaciaCanaisService } from '../../eficacia-canais/eficacia-canais.service';
 declare function init():any;
 declare var c3;

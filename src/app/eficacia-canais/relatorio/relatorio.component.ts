@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EficaciaCanais } from '../eficacia-canais';
+import { EficaciaCanais } from '../models/eficacia-canais.model';
 import { EficaciaCanaisService } from '../eficacia-canais.service';
 import { ActivatedRoute , ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';

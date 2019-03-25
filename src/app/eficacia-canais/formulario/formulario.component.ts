@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Cliente } from '../../cliente/cliente';
+import { Cliente } from '../../cliente/models/cliente.model';
 import { ClienteService} from '../../cliente/cliente.service';
 import { EficaciaCanaisService} from '../eficacia-canais.service';
 import { Router} from '@angular/router';
-import { EficaciaCanais } from '../eficacia-canais';
+import { EficaciaCanais } from '../models/eficacia-canais.model';
 import { numberValidator,requiredTextValidator } from '../../shared/validators.directive';
 
 @Component({

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { EficaciaCanais } from './eficacia-canais';
-import { EficaciaCanalRelatorio } from './eficacia-canal-relatorio';
+import { EficaciaCanais } from './models/eficacia-canais.model';
+import { EficaciaCanalRelatorio } from './models/eficacia-canal-relatorio.model';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 import * as global from '../global';
 
 

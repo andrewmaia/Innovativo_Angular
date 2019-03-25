@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../usuario';
+import { Usuario } from '../models/usuario.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService }  from '../usuario.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { requiredTextValidator } from '../../shared/validators.directive';
 import { ClienteService} from '../../cliente/cliente.service';
-import { Cliente } from '../../cliente/cliente';
+import { Cliente } from '../../cliente/models/cliente.model';
 
 @Component({
   selector: 'app-usuario-detalhe',

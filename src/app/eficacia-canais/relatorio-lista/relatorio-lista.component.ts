@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EficaciaCanalRelatorio } from '../eficacia-canal-relatorio';
+import { EficaciaCanalRelatorio } from '../models/eficacia-canal-relatorio.model';
 import { EficaciaCanaisService }  from '../eficacia-canais.service';
 import { AuthService } from '../../auth/auth.service';
 import { Observable } from 'rxjs';

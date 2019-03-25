@@ -4,7 +4,6 @@
 -Retirar todos os atributos Styles
 -Melhor Layout para botões
 -Criar diretiva (componente) para char em pizza do eficacia de canais. Amarrar execução de JavaScript da biblioteca de forma correta com o angular
--Criar um pasta para models, levar todos os models para la e avaliar utilização de cada model
 -Cadastro de Eficacia de Canais: Adicionar validação de valores do relatorio: Visitantes>Leads>Oportunidades>Vendas
 -Cadastro de Eficacia de Canais: Um período de um cliente não pode invadir outro relatorio
 -app.component: Popular menus de um json
