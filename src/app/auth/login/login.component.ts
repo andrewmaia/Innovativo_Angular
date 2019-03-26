@@ -26,7 +26,12 @@ export class LoginComponent {
         this.router.navigate([redirect]);
       }
     }
-    ,erro=> this.message=erro
+    ,(erro)=> {
+        if(erro.status==401)
+          this.message="Usuário ou Senha Incorretos";
+        else
+          this.message="Erro Desconhecido";
+      }
     );
   }
 
