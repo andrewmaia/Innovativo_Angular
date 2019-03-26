@@ -23,18 +23,17 @@ export class AppInterceptor implements HttpInterceptor {
         }
 
         return next.handle(request).pipe(catchError(err => {
-            if (err.status === 401) {
+            if (err.status === 401 && !request.url.includes("usuario/autenticar"))   {
                 //Se por algum acaso o token da API expirar e a autenticação do Agular estiver ativa 
                 //Desloga sozinho
                 this.authService.logout();
                 location.reload(true);
             }
-            else{
+            else if(!request.url.includes("usuario/autenticar")) {
                 this.router.navigate(['/erro']);    
             }
-            
-            const error = err.error.message || err.statusText;
-            return throwError(error);
+
+            return throwError(err);
         }))
     }
 }
