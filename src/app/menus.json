@@ -1,0 +1,7 @@
+[
+  {"endereco":"/dashboard-sample", "descricao": "Exemplo Dashboard", "papeis": ["Admin"]},
+  {"endereco":"/dashboard", "descricao": "Dashboard", "papeis": ["Admin","Cliente"]},
+  {"endereco":"/clientes", "descricao": "Clientes", "papeis": ["Admin"]},
+  {"endereco":"/usuarios", "descricao": "Usuários", "papeis": ["Admin"]},  
+  {"endereco":"/eficacia-canais/relatorio", "descricao": "Eficácia dos Canais", "papeis": ["Admin","Cliente"]}     
+]

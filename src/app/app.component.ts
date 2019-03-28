@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { Router } from '@angular/router';
+import menus from "../app/menus.json";
+
 
 
 @Component({
@@ -9,13 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit {
-  nomePagina;
-  caminhoLista;
-  ano;
+  nomePagina:string;
+  caminhoLista:string;
+  menuLista;
+  ano:number;
   constructor(public authService: AuthService,private router: Router) { }  
 
   ngOnInit() {
     this.ano =(new Date()).getFullYear();
+    this.menuLista=menus;
   }
 
   logout() {

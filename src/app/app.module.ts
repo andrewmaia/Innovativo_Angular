@@ -15,17 +15,17 @@ import { AppInterceptor } from './app.interceptor';
 import { MainComponent } from './dashboard/main/main.component';
 import { ClienteComponent } from './dashboard/cliente/cliente.component';
 import { ErroComponent } from './erro/erro.component';
-
+import {MenusHabilitadosPipe} from "../app/shared/pipes/menusHabilitados.pipe"
 
 
 @NgModule({
   declarations: [
+    MenusHabilitadosPipe,
     AppComponent,
     PaginaNaoEncontradaComponent,
     MainComponent,
     ClienteComponent,
     ErroComponent
-
   ],
   imports: [
     BrowserModule,
