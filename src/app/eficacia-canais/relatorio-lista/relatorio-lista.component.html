@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"  *ngIf="eficaciaCanalRelatorioLista$ | async as eficaciaCanalRelatorioLista; else loading">
     <!-- column -->
     <div class="col-lg-12">
         <div class="card">
@@ -15,7 +15,7 @@
                         </tr>  
                         </thead>      
                         <tbody>
-                        <tr *ngFor="let eficaciaCanalRelatorio of eficaciaCanalRelatorioLista$ | async">
+                        <tr *ngFor="let eficaciaCanalRelatorio of eficaciaCanalRelatorioLista ">
                             <td>{{ eficaciaCanalRelatorio.clienteNomeFantasia }}</td>
                             <td>{{ eficaciaCanalRelatorio.descricao }}</td> 
                             <td>{{ eficaciaCanalRelatorio.dataInicial | date:  'dd/MM/yyyy' }}</td>
@@ -29,3 +29,4 @@
         </div>
     </div>
 </div>
+<ng-template #loading>Carregando...</ng-template>

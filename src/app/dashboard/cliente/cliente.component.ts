@@ -14,7 +14,6 @@ export class ClienteComponent implements OnInit,AfterViewInit  {
   constructor(private eficaciaCanaisService: EficaciaCanaisService) { }
 
   ngOnInit() {
-
   }
   obterNomePagina(){
     return "Dashboard";
@@ -24,6 +23,7 @@ export class ClienteComponent implements OnInit,AfterViewInit  {
     return ['Home','Dashboard'];
   }
   ngAfterViewInit() {
+
     this.eficaciaCanaisService.obterUltimo().subscribe(efc=>{
         if (efc==null)
         {

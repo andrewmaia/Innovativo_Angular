@@ -1,5 +1,5 @@
 <!-- Row -->
-<div class="row">
+<div class="row" *ngIf="!carregando; else loading">
     <!-- Column -->
     <div class="col-lg-8 col-xlg-9 col-md-7">
         <div class="card">
@@ -52,3 +52,4 @@
     <!-- Column -->
 </div>
 <!-- Row -->
+<ng-template #loading>Carregando...</ng-template>

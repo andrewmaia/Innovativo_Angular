@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="usuarios$ | async as usuarios; else loading">
     <!-- column -->
     <div class="col-lg-12">
         <div class="card">
@@ -17,7 +17,7 @@
                         </tr>  
                         </thead>      
                         <tbody>
-                        <tr *ngFor="let usuario of usuarios$ | async">
+                        <tr *ngFor="let usuario of usuarios">
                             <td>{{ usuario.id }}</td>
                             <td>{{ usuario.nome }}</td> 
                             <td>{{ usuario.email }}</td>
@@ -32,3 +32,4 @@
         </div>
     </div>
 </div>
+<ng-template #loading>Carregando...</ng-template>

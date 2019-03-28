@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="clientes$ | async as clientes; else loading"> 
     <!-- column -->
     <div class="col-lg-12">
         <div class="card">
@@ -14,7 +14,7 @@
                         </tr>  
                         </thead>      
                         <tbody>
-                        <tr *ngFor="let cliente of clientes$ | async">
+                        <tr *ngFor="let cliente of clientes">
                             <td>{{ cliente.id }}</td>
                             <td>{{ cliente.nomeFantasia }}</td> 
                             <td><a [routerLink]="['/clientes', cliente.id]">Editar</a></td>
@@ -26,3 +26,4 @@
         </div>
     </div>
 </div>
+<ng-template #loading>Carregando...</ng-template>

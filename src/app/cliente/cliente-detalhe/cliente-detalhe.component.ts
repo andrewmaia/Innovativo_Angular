@@ -16,7 +16,7 @@ export class ClienteDetalheComponent implements OnInit {
     nomeFantasia: new FormControl('',requiredTextValidator())
   });
   id : string;
-
+  carregando: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,12 +25,13 @@ export class ClienteDetalheComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
+    this.carregando = true;
     this.id =  this.route.snapshot.paramMap.get("id");
     if(this.id){
       this.service.obterCliente(this.id).subscribe(cliente => 
         {
           this.form.patchValue(cliente);
+          this.carregando=false;
         }
       ); 
     }

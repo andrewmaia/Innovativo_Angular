@@ -22,6 +22,7 @@ export class UsuarioDetalheComponent implements OnInit {
   });
   id : string;
   clientes: Cliente[];   
+  carregando: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,9 +42,11 @@ export class UsuarioDetalheComponent implements OnInit {
     this.clienteService.obterClientes().subscribe(clientes=>this.clientes=clientes);
     this.id =  this.route.snapshot.paramMap.get("id");
     if(this.id){
+      this.carregando = true;      
       this.service.obterUsuario(this.id).subscribe(usuario => 
         {
           this.form.patchValue(usuario);
+          this.carregando = false;
         }
       ); 
     }
