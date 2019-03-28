@@ -25,9 +25,9 @@ export class ClienteDetalheComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.carregando = true;
     this.id =  this.route.snapshot.paramMap.get("id");
     if(this.id){
+      this.carregando = true;      
       this.service.obterCliente(this.id).subscribe(cliente => 
         {
           this.form.patchValue(cliente);
