@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate, CanActivateChild,CanLoad {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
-    return this.validar(url,route.data.papel);
+    return this.validar(url,route.data.papeis);
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -30,18 +30,30 @@ export class AuthGuard implements CanActivate, CanActivateChild,CanLoad {
     return this.validar(url,route.data.papeis);
   }  
 
-  validar(url: string, papel: string): boolean {
-    if (!this.authService.isLoggedIn()){
+  validar(url: string, papeisRota: string[]): boolean {
+    //Não está logado
+    if (!this.authService.isLoggedIn() ){
       this.redirecionar(url);
       return false;
     } 
  
-    if(papel && !this.authService.papeis().toString().includes(papel)){
-      this.redirecionar(url);
-      return false;
+    //Se a rota não enviou papel é porque não tem restrição
+    if(!papeisRota){
+      return true;
     }
 
-    return true;
+    let possuiPapelNecessarioRota = false;
+    papeisRota.forEach(papel => {
+      if(this.authService.papeis().includes(papel)){
+        possuiPapelNecessarioRota=true;
+      }
+    });
+
+    if(possuiPapelNecessarioRota)
+      return true;
+
+    this.redirecionar(url);
+    return false;
   }
 
   redirecionar(url: string){

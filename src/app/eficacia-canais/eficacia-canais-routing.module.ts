@@ -8,7 +8,7 @@ import { AuthGuard }                from '../auth/auth.guard';
 const routes: Routes = [
   { path: 'eficacia-canais/relatorio', canActivate: [AuthGuard],  component: RelatorioListaComponent },  
   { path: 'eficacia-canais/relatorio/:id', canActivate: [AuthGuard],  component: RelatorioComponent },
-  { path: 'eficacia-canais/novo', canActivate: [AuthGuard], data:{papel:'admin'},    component: FormularioComponent }  
+  { path: 'eficacia-canais/novo', canActivate: [AuthGuard], data:{papeis:['admin']},    component: FormularioComponent }  
 ];
 
 @NgModule({

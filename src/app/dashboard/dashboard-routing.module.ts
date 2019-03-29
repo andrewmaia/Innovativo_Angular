@@ -6,7 +6,7 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: ClienteComponent },      
-  { path: 'dashboard-sample', canActivate: [AuthGuard], data:{papel:'admin'}, component: MainComponent }   
+  { path: 'dashboard-sample', canActivate: [AuthGuard], data:{papeis:['admin']}, component: MainComponent }   
 ];
 
 @NgModule({

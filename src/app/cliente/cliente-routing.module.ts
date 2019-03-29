@@ -8,19 +8,19 @@ const routes: Routes = [
   { 
     path: 'clientes/inserir',
     canActivate: [AuthGuard],
-    data:{papel:'admin'},  
+    data:{papeis:['admin']},      
     component: ClienteDetalheComponent 
   },     
   { 
     path: 'clientes/:id',
     canActivate: [AuthGuard],   
-    data:{papel:'admin'},      
+    data:{papeis:['admin']},      
     component: ClienteDetalheComponent 
   },
   { 
     path: 'clientes',
     canActivate: [AuthGuard],     
-    data:{papel:'admin'},      
+    data:{papeis:['admin']},      
     component: ClienteListaComponent 
   }
 ];

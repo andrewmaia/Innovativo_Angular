@@ -25,14 +25,10 @@ export class AuthService {
             localStorage.setItem('usuario', JSON.stringify(usuario));            
           }
           return usuario;
-        }),
-        catchError( this.errorHandler)
+        })
     );
   } 
 
-  errorHandler(erro:HttpErrorResponse){
-    return throwError(erro);
-  }
 
   isLoggedIn(): boolean{
     if(localStorage.getItem('usuario'))

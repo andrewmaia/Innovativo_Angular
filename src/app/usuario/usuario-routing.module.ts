@@ -8,19 +8,19 @@ const routes: Routes = [
   { 
     path: 'usuarios/inserir',
     canActivate: [AuthGuard],
-    data:{papel:'admin'},  
+    data:{papeis:['admin']},      
     component: UsuarioDetalheComponent 
   },     
   { 
     path: 'usuarios/:id',
     canActivate: [AuthGuard],   
-    data:{papel:'admin'},      
+    data:{papeis:['admin']},      
     component: UsuarioDetalheComponent 
   },  
   { 
     path: 'usuarios',
     canActivate: [AuthGuard],     
-    data:{papel:'admin'},      
+    data:{papeis:['admin']},      
     component: UsuarioListaComponent 
   }
 ];
