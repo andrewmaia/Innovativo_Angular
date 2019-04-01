@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Usuario } from './models/usuario.model';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 import * as global from '../global';
 
 const httpOptions = {

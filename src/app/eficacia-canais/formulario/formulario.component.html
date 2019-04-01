@@ -1,27 +1,27 @@
 <!-- Row -->
 <div class="row">
     <!-- Column -->
-    <div class="col-lg-8 col-xlg-9 col-md-7">
+    <div class="col-12">
         <div class="card">
             <div class="card-block">
                 <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="form-horizontal form-material">
                     <div class="form-group">
-                        <label class="col-sm-12">Cliente</label>
-                        <div class="col-sm-12">
+                        <label class="col-4 ">Cliente</label>
+                        <div class="col-xs-12 col-sm-6 col-md-5">
                             <select  id="cliente" formControlName="cliente" class="form-control form-control-line" required>
                                 <option [value]="c.id" *ngFor="let c of clientes">{{c.nomeFantasia}}</option>
                             </select>
                         </div>
                     </div>   
                     <div class="form-group">
-                        <label for="descricao" class="col-md-12">Descrição do Relatório</label>
-                        <div class="col-md-12">
+                        <label for="descricao" class="col-4">Descrição do Relatório</label>
+                        <div class="col-xs-12 col-sm-6 col-md-5">
                             <input id="descricao" formControlName="descricao" type="text" class="form-control form-control-line" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-12">Período</label>
-                        <div class="col-md-12">
+                        <label class="col-4">Período</label>
+                        <div class="col-xs-12 col-sm-6 col-md-5">
                             <input formControlName="dataInicial" type="date"  class="form-control form-control-line" required>
                             à
                             <input formControlName="dataFinal" type="date"  class="form-control form-control-line"  required>                                   
@@ -115,11 +115,16 @@
                           </tbody>      
                         </table>                          
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-2">
+                    <div class="row justify-content-center mt-3">
+                        <div >
                             <button type="submit" class="btn btn-success" [disabled]="!form.valid">Salvar</button>
                         </div>
-                    </div>                                                                            
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        <div>
+                            {{mensagem}}
+                        </div>                                                                                                                                                                                                
+                      </div>                    
                 </form>
             </div>
         </div>
@@ -127,4 +132,5 @@
     <!-- Column -->
 </div>
 <!-- Row -->
+
 

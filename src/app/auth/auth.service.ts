@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, delay, tap,map } from 'rxjs/operators';
-import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { HttpClient} from '@angular/common/http';
 import * as global from '../global';
-import {throwError} from 'rxjs'; 
 
 
 @Injectable({

@@ -29,7 +29,7 @@ export class AppInterceptor implements HttpInterceptor {
                 this.authService.logout();
                 location.reload(true);
             }
-            else if(!request.url.includes("usuario/autenticar")) {
+            else if(!request.url.includes("usuario/autenticar") && err.status!==409) {
                 this.router.navigate(['/erro']);    
             }
 

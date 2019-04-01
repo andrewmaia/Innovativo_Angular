@@ -6,6 +6,7 @@ import { EficaciaCanaisService} from '../eficacia-canais.service';
 import { Router} from '@angular/router';
 import { EficaciaCanais } from '../models/eficacia-canais.model';
 import { numberValidator,requiredTextValidator } from '../../shared/validators.directive';
+import { catchError,map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-formulario',
@@ -42,6 +43,7 @@ export class FormularioComponent implements OnInit {
 
   clientes: Cliente[]; 
   titulo='Novo';
+  mensagem='';
 
   constructor(
     private clienteService: ClienteService,
@@ -58,16 +60,21 @@ export class FormularioComponent implements OnInit {
   }  
 
   ngOnInit() {
-    this.clienteService.obterClientes().subscribe(clientes=>this.clientes=clientes);
+    this.clienteService.obterClientes().subscribe(
+      clientes=>this.clientes=clientes
+    );
   }
 
   onSubmit({ value }: { value: EficaciaCanais}) {
     this.eficaciaCanaisService.inserirRelatorio(value)
       .subscribe(
-        () => this.router.navigate(['/eficacia-canais/relatorio']) 
+         () => {
+           this.router.navigate(['/eficacia-canais/relatorio']);
+        }
+        ,erro=>this.mensagem = erro.error
       );
   }
 
-
+  
 }
 
