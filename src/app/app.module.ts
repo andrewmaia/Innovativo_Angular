@@ -12,8 +12,6 @@ import { DashboardModule }  from './dashboard/dashboard.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { AppInterceptor } from './app.interceptor';
-import { MainComponent } from './dashboard/main/main.component';
-import { ClienteComponent } from './dashboard/cliente/cliente.component';
 import { ErroComponent } from './erro/erro.component';
 import {MenusHabilitadosPipe} from "../app/shared/pipes/menusHabilitados.pipe"
 
@@ -23,18 +21,16 @@ import {MenusHabilitadosPipe} from "../app/shared/pipes/menusHabilitados.pipe"
     MenusHabilitadosPipe,
     AppComponent,
     PaginaNaoEncontradaComponent,
-    MainComponent,
-    ClienteComponent,
     ErroComponent
   ],
   imports: [
+    DashboardModule,          
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     AuthModule,  
     EficaciaCanaisModule,  
-    DashboardModule,      
     ClienteModule,
     UsuarioModule,            
     AppRoutingModule, 
