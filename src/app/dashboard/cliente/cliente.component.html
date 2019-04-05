@@ -5,59 +5,29 @@
         <div class="card">
             <div class="card-block">
                 <h3 class="card-title">Eficacia dos Canais</h3>
-                <h6 class="card-subtitle">
-                    <span *ngIf="efc">{{efc.descricao}}</span>
-                    <span *ngIf="!efc">Nenhum Relatório Disponível</span>                    
+                <h6 *ngIf="!efc" class="card-subtitle">
+                    <span >Nenhum Relatório Disponível</span>                    
                 </h6>
-                <div *ngIf="efc">
-                    <app-funil-etapa-pizza 
-                        [id]="'visitantes'"
-                        [titulo]="'Visitantes'"
-                        [buscaPaga]="efc.buscaPagaVisitantes"
-                        [direta]="efc.diretoVisitantes"
-                        [email]="efc.emailVisitantes"
-                        [referencia]="efc.referenciaVisitantes"
-                        [organica]="efc.organicoVisitantes"
-                    ></app-funil-etapa-pizza>
-                    <app-funil-etapa-pizza 
-                        [id]="'leads'"
-                        [titulo]="'Leads'"
-                        [buscaPaga]="efc.buscaPagaLeads"
-                        [direta]="efc.diretoLeads"
-                        [email]="efc.emailLeads"
-                        [referencia]="efc.referenciaLeads"
-                        [organica]="efc.organicoLeads"
-                    ></app-funil-etapa-pizza>
-                    <app-funil-etapa-pizza 
-                        [id]="'oportunidades'"
-                        [titulo]="'Oportunidades'"
-                        [buscaPaga]="efc.buscaPagaOportunidades"
-                        [direta]="efc.diretoOportunidades"
-                        [email]="efc.emailOportunidades"
-                        [referencia]="efc.referenciaOportunidades"
-                        [organica]="efc.organicoOportunidades"
-                    ></app-funil-etapa-pizza>
-                    <app-funil-etapa-pizza 
-                        [id]="'vendas'"
-                        [titulo]="'Oportunidades'"
-                        [buscaPaga]="efc.buscaPagaVendas"
-                        [direta]="efc.diretoVendas"
-                        [email]="efc.emailVendas"
-                        [referencia]="efc.referenciaVendas"
-                        [organica]="efc.organicoVendas"
-                    ></app-funil-etapa-pizza>
-                </div>                                    
+                <app-eficacia-canais-pizza *ngIf="efc"
+                    [efc]="efc"
+                    [buscaPagaCor]="buscaPagaCor" 
+                    [diretaCor]="diretaCor" 
+                    [emailCor]="emailCor" 
+                    [referenciaCor]="referenciaCor" 
+                    [organicaCor]="organicaCor"                                                                                 
+                >
+            </app-eficacia-canais-pizza>
             </div>
             <div>
                 <hr class="m-t-0 m-b-0">
             </div>
             <div class="card-block text-center ">
                 <ul class="list-inline m-b-0">
-                    <li><h6 style="color:#009e60"><i class="fa fa-circle font-10 m-r-10 "></i>Busca Paga</h6> </li>
-                    <li><h6 style="color:#745af2"><i class="fa fa-circle font-10 m-r-10"></i>Direta</h6> </li>
-                    <li><h6 style="color:#26c6da"><i class="fa fa-circle font-10 m-r-10"></i>Email</h6> </li>
-                    <li><h6 style="color:#7FFF00"><i class="fa fa-circle font-10 m-r-10"></i>Referência</h6> </li> 
-                    <li><h6 style="color: #bb3385"><i class="fa fa-circle font-10 m-r-10"></i>Orgânica</h6> </li>                                                                              
+                    <li><h6 [ngStyle]="{'color': buscaPagaCor}"><i class="fa fa-circle font-10 m-r-10 "></i>Busca Paga</h6> </li>
+                    <li><h6 [ngStyle]="{'color': diretaCor}"><i class="fa fa-circle font-10 m-r-10"></i>Direta</h6> </li>
+                    <li><h6 [ngStyle]="{'color': emailCor}"><i class="fa fa-circle font-10 m-r-10"></i>Email</h6> </li>
+                    <li><h6 [ngStyle]="{'color': referenciaCor}"><i class="fa fa-circle font-10 m-r-10"></i>Referência</h6> </li> 
+                    <li><h6 [ngStyle]="{'color': organicaCor}"><i class="fa fa-circle font-10 m-r-10"></i>Orgânica</h6> </li>                                                                              
                 </ul>
             </div>
         </div>

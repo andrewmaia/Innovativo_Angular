@@ -11,6 +11,12 @@ export class ClienteComponent implements OnInit  {
   constructor(private eficaciaCanaisService: EficaciaCanaisService) { }
   efc: EficaciaCanais;
   carregando: boolean;
+  buscaPagaCor: string= "#009e60";
+  diretaCor: string="#745af2";
+  emailCor: string="#26c6da";
+  referenciaCor: string="#7FFF00";      
+  organicaCor: string="#bb3385";        
+
 
   ngOnInit() {
     this.carregando=true;

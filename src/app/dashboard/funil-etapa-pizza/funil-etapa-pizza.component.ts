@@ -10,12 +10,18 @@ export class FunilEtapaPizzaComponent  implements OnInit,AfterViewInit  {
   
   constructor() { }
   @Input() id: string;
-  @Input() titulo: string;  
+  @Input() titulo: string;
   @Input() buscaPaga: number;
   @Input() direta: number;
   @Input() email: number;
   @Input() referencia: number;
   @Input() organica: number;
+  @Input() buscaPagaCor: string;
+  @Input() diretaCor: string;
+  @Input() emailCor: string;
+  @Input() referenciaCor: string;
+  @Input() organicaCor: string;      
+  
 
   ngOnInit() {
   }
@@ -47,7 +53,7 @@ export class FunilEtapaPizzaComponent  implements OnInit,AfterViewInit  {
           hide: true
       },
       color: {
-          pattern: ['#009e60', '#745af2', '#26c6da', '#7FFF00', '#bb3385']
+          pattern: [this.buscaPagaCor, this.diretaCor, this.emailCor, this.referenciaCor, this.organicaCor]
       }
   });
   }
