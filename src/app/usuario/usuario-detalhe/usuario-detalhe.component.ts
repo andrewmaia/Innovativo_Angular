@@ -46,6 +46,7 @@ export class UsuarioDetalheComponent implements OnInit {
       this.service.obterUsuario(this.id).subscribe(usuario => 
         {
           this.form.patchValue(usuario);
+          this.form.get('senha').setValidators(null);
           this.carregando = false;
         }
       ); 

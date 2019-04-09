@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../models/usuario.model';
 import { Observable } from 'rxjs';
 import { UsuarioService }  from '../usuario.service';
-import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-usuario-lista',
