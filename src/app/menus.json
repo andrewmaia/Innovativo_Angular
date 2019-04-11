@@ -1,7 +1,7 @@
 [
-  {"endereco":"/dashboard-sample", "descricao": "Exemplo Dashboard", "papeis": ["admin"]},
-  {"endereco":"/dashboard", "descricao": "Dashboard", "papeis": ["admin","cliente"]},
-  {"endereco":"/clientes", "descricao": "Clientes", "papeis": ["admin"]},
-  {"endereco":"/usuarios", "descricao": "Usuários", "papeis": ["admin"]},  
-  {"endereco":"/eficacia-canais/relatorio", "descricao": "Eficácia dos Canais", "papeis": ["admin","cliente"]}     
+  {"endereco":"/dashboard-sample", "descricao": "Exemplo Dashboard", "papeis": ["admin"],"icone":"mdi mdi-gauge"},
+  {"endereco":"/dashboard", "descricao": "Dashboard", "papeis": ["admin","cliente"],"icone":"mdi mdi-gauge"},
+  {"endereco":"/clientes", "descricao": "Clientes", "papeis": ["admin"],"icone":"mdi mdi-account-check"},
+  {"endereco":"/usuarios", "descricao": "Usuários", "papeis": ["admin"],"icone":"mdi mdi-emoticon"},
+  {"endereco":"/eficacia-canais/relatorio", "descricao": "Eficácia dos Canais", "papeis": ["admin","cliente"],"icone":"mdi mdi-table"}
 ]

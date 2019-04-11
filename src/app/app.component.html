@@ -71,7 +71,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li *ngFor="let menu of menuLista| menusHabilitados:authService.papeis()"> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada(menu.endereco)?'active':'']" routerLink="{{menu.endereco}}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">{{menu.descricao}}</span></a>
+                        <li *ngFor="let menu of menuLista| menusHabilitados:authService.papeis()"> <a [ngClass]="['waves-effect waves-dark',paginaSelecionada(menu.endereco)?'active':'']" routerLink="{{menu.endereco}}" aria-expanded="false"><i [ngClass]="[menu.icone]"></i><span class="hide-menu">{{menu.descricao}}</span></a>
                         </li>
                     </ul>
                 </nav>
