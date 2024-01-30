@@ -1,0 +1,2 @@
+executar no powershell
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
